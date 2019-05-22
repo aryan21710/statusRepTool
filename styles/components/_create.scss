@@ -1,0 +1,185 @@
+:root {
+    --w: 1000px;
+    --h: 20vh;
+    
+}
+* {
+    box-sizing: border-box;
+}
+/* width:var(--w) not working under .create and .myform*/
+.main {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+
+
+}
+
+.create {
+    width: 90vw;
+    height: 75vh;
+    background: #e60099;
+    opacity: 0.7;
+    box-shadow: 5px 10px black;
+    color: black;
+}
+
+.myForm {
+    display: grid;
+    grid-template-rows: 15vh 48vh;
+    grid-gap: 5vh;
+    grid-template-columns: 1fr;
+}
+
+.addRepDiv {
+    display: grid;  
+    grid-template-columns: minmax(auto,10vw) minmax(auto,10vw) minmax(auto,59vw) minmax(auto,3vw);
+    align-items: center;
+    grid-gap: 1vw;
+    width: 100%;
+
+}
+
+.submitRepDiv {
+    display: grid;
+    grid-template-rows: 45vh 5vh;
+    justify-content: center;
+    grid-row-gap: 3vh;
+
+}
+
+
+.options,
+.DateInput_input,
+.btn1,
+.DateInput, .DateInput_1 {
+    background:#99d6ff;
+    line-height: 1rem;
+    font-size: 2rem;
+    padding:0;
+    cursor: pointer;
+    color: #3333ff;
+    height: calc(var(--h)/4);
+    
+}
+
+.textarea1:focus, .textarea1:focus {
+    background: #cccccc;
+}
+
+.btn2 {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+     
+
+} 
+
+.btn2 button {
+   background:#99d6ff;
+   font-size: 2rem;
+   cursor: pointer;
+   color: #3333ff;
+ 
+}
+
+
+.textarea1 {
+    font-size: 2rem;
+    text-align: left;
+    height: calc(var(--h)/4);
+}
+
+.textarea2 {
+    font-size: 2rem;
+    text-align: left;
+   width: 80vw;
+
+}
+
+table,th,td {
+    border: 1px solid black;
+      border-collapse: collapse;
+
+}
+
+
+
+::placeholder {
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+
+@media screen and (max-width:600px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .myForm {
+        display:grid;
+        grid-gap: 2.5vh;
+    }
+    .addRepDiv {
+        margin: 10px 0px 0px 0px;
+        display: grid;
+        grid-column-gap: 5px;
+        grid-template-areas: 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding: 0px 5px;
+    }
+
+    .options {
+        grid-column-start: 4;
+        grid-column-end: 6;
+        height: 40px;
+
+    }
+.DateInput_input {
+    grid-column-start: 1;
+    grid-column-end: 3;
+        height: 40px;
+
+
+}
+.textarea1 {
+    grid-column-start: 1;
+    grid-column-end:5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.btn1 {
+ grid-column-start: 5;
+    grid-column-end:7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+    .btn2 {
+    width: 40vw;
+    margin-left: 20vw;
+     
+
+}
+
+.submitRepDiv {
+    margin: 10px;
+    display: grid;
+    grid-template-rows: 45vh 5vh;
+    justify-content: center;
+    grid-row-gap: 3vh;
+
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.DateInput_input,.DateInput_1,.DateInput,
+.options,::placeholder,.textarea2,.textarea1,.btn2 button {
+    font-size: 1.5rem
+}
+}
+
+
+

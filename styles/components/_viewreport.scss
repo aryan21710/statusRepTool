@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+/* width:var(--w) not working under .create and .myform*/
+.mainView {
+    display: flex;
+    justify-content: center;
+        width: 99vw;
+        height: 80vh;
+}
+
+.createView {
+    width: 90%;
+    height: 70vh;
+    background: pink;  
+    padding:20px;
+    box-shadow: 5px 10px grey;
+    color: #3333ff;
+    opacity: 0.8;
+
+}
+
+
+
+.myformView {
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+}
+
+
+input[type="text"],
+.optionsView {
+
+  color: #3333ff;
+  // text-indent: 1vw;
+  text-align: center;
+  height: 40px;
+  background: #99d6ff;
+  line-height: 10px;
+  font-size: 2rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+input[type="text"] {
+    grid-column-start: 1;
+  grid-column-end: 4;
+}
+.optionsView {
+  grid-column-start: 6;
+  grid-column-end: 9;
+}
+
+.textAreaView {
+  margin: 5vh 0vh 3vh 0vh;
+  grid-column-start: 1;
+  grid-column-end: 9;
+  height: 55vh;
+  font-size: 2.5rem;
+  text-align: left;
+  overflow: auto;
+}
+
+input::placeholder {
+  // text-indent: 1vw;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #3333ff;
+}
