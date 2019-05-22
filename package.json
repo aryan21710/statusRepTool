@@ -2,7 +2,7 @@
   "name": "status-rep-tool",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://aryan21710.github.io/aryan21710-github.io",
+  "homepage": "https://aryan21710.github.io/statusRepTool",
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --watch",
