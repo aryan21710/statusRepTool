@@ -34,6 +34,12 @@ export default class ViewReport extends React.Component {
 			{
 				Header: 'Date',
 				accessor: 'date', // String-based value accessors!
+				sortMethod: (a,b)=>{
+					let pattern = /(\d{1,3})/;
+					if (a.match(pattern) && b.match(pattern)) {
+						return parseInt(a.match(pattern)[0]) < parseInt(b.match(pattern)[0]) ? 1 : -1
+					}
+				}
 			},
 			{
 				Header: 'Category',

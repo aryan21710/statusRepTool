@@ -151,19 +151,36 @@ export default class StatusForm extends React.Component {
 						<div className="btn2">
 							<button 
 								onClick={() => {
-									if (this.submitBtn)
-                                     alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT')
-									if (this.state.category && this.state.text) {
-											this.props.onSubmit({
-												createdAt: this.state.createdAt,
-												calFocussed: this.state.calFocussed,
-												categoryObj: this.state.categoryObj,
-												categoryCnt: this.state.categoryCnt,
-												category: this.state.category,
-												text: this.state.text,
-												data: this.state.data,
-											});
+									if (this.submitBtn) {
+											 alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT')
+									} else {
+												console.log(
+													'SUBMITTING THE PROPS OUT OF STATUSFORM'
+												);
+												this.props.onSubmit({
+													createdAt: this
+														.state
+														.createdAt,
+													calFocussed: this
+														.state
+														.calFocussed,
+													categoryObj: this
+														.state
+														.categoryObj,
+													categoryCnt: this
+														.state
+														.categoryCnt,
+													category: this.state
+														.category,
+													text: this.state
+														.text,
+													data: this.state
+														.data,
+												});
 									}
+											
+								
+									
 								}}
 							>
 								Submit Report
