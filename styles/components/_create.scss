@@ -26,8 +26,8 @@
 
 .myForm {
     display: grid;
-    grid-template-rows: 15vh 48vh;
-    grid-gap: 5vh;
+    grid-template-rows: 13vh 53vh;
+    grid-gap: 3vh;
     grid-template-columns: 1fr;
 }
 
@@ -44,7 +44,7 @@
 
 .submitRepDiv {
     display: grid;
-    grid-template-rows: 45vh 5vh;
+    grid-template-rows: 48vh 5vh;
     justify-content: center;
     grid-row-gap: 3vh;
 

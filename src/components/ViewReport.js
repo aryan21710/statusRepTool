@@ -56,10 +56,6 @@ export default class ViewReport extends React.Component {
 				<div className="createView">
 					<div className="myformView">
 						<input type="text" placeholder="SEARCH REPORT" value="" />
-						<select className="optionsView">
-							<option value="sort_date">SORT_BY_DATE</option>
-							<option value="sort_category">SORT_BY_CATEGORY</option>
-						</select>
 						<ReactTable
 							className="-striped -highlight textAreaView"
 							data={displayData}

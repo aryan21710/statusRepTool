@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-weight: 900;
 }
 /* width:var(--w) not working under .create and .myform*/
 .mainView {
@@ -10,26 +11,25 @@
 }
 
 .createView {
-    width: 90%;
-    height: 70vh;
-    background: pink;  
+    width: 90vw;
+    height: 75vh;
+    background: #e60099;  
     padding:20px;
-    box-shadow: 5px 10px grey;
     color: #3333ff;
     opacity: 0.8;
-
 }
 
 
 
 .myformView {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(8,1fr);
 }
 
 
-input[type="text"],
-.optionsView {
+.myformView input[type="text"]
+{
 
   color: #3333ff;
   // text-indent: 1vw;
@@ -40,16 +40,13 @@ input[type="text"],
   font-size: 2rem;
   padding: 0;
   cursor: pointer;
+    grid-column-start: 3;
+  grid-column-end: 7;
+  border-radius: 20px;
 }
 
-input[type="text"] {
-    grid-column-start: 1;
-  grid-column-end: 4;
-}
-.optionsView {
-  grid-column-start: 6;
-  grid-column-end: 9;
-}
+
+
 
 .textAreaView {
   margin: 5vh 0vh 3vh 0vh;
@@ -67,4 +64,23 @@ input::placeholder {
   font-size: 2rem;
   cursor: pointer;
   color: #3333ff;
+}
+
+.rt-td:last-child {
+  overflow: auto;
+  text-overflow: initial;
+}
+
+@media screen and (max-width:600px) {
+input[type="text"], input::placeholder, .textAreaView, .rt-td,
+.ReactTable .rt-thead .rt-resizable-header-content {
+  font-size: 1.5rem;
+}
+.rt-td:last-child {
+  overflow: auto;
+  text-overflow: initial;
+}
+.ReactTable .-pagination .-center {
+  flex: auto;
+}
 }
