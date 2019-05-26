@@ -49,7 +49,13 @@ export default class ViewReport extends React.Component {
 		let displayData = []
 		let d=[]
 
-				if (localStorage.getItem('data')) {
+				if (!localStorage.getItem('data') || localStorage.getItem('data')=='[]') {
+					console.log('1] NO LOCALSTORAGE BUT PROPS.DATA');
+					displayData=this.props.data ? displayData.concat(this.props.data) : []
+				
+				} else {
+
+				
 					displayData = displayData.concat(JSON.parse(localStorage.getItem('data')));
 					const localStortoMap=displayData.map((m)=>{
 				     return this.convertToMap(m);
@@ -63,7 +69,6 @@ export default class ViewReport extends React.Component {
 							return this.convertToMap(m);
 						});
 					if (localStortoMap.length > 0 && propsDatatoMap.length > 0) {
-					
 							for (let j=0; j<=propsDatatoMap.length-1;j++) {
 								let flag=false;
 								for(let i=0; i<=localStortoMap.length-1;i++) {
@@ -72,40 +77,19 @@ export default class ViewReport extends React.Component {
 									}
 									if (flag) break 	
 								}
-							
 							!flag && (d.push(propsDatatoMap[j])) 
 						}																				
-
-							
-						
-						console.log('d:-'+d);
-
 						const d1=d.length > 0 ? this.convertMaptoObj(d) : []
 
 						console.log('d1:-'+JSON.stringify(d1,null,4));
-				
-						// displayData=displayData.concat({
-						// 	...JSON.parse(localStorage.getItem('data')),
-						// 	...this.props.data,
-						// });
 
-						d1.forEach(v => {
-
-							console.log('v:-' + JSON.stringify(v));
-							displayData.push(v);
-						});
+						d1.forEach(v => displayData.push(v));
 					} else {
-								if (this.props.data)
-									displayData.push(
-											this.props.data
-											);
-
+						if (this.props.data)displayData.push(this.props.data);
+ 
 					}
 					}
-				} else {
-					console.log('1] NO LOCALSTORAGE BUT PROPS.DATA');
-					if (this.props.data) displayData.push(this.props.data);
-				}		
+				} 	
 			localStorage.setItem('data', JSON.stringify(displayData));
 		
 		
