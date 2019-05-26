@@ -154,6 +154,7 @@ export default class StatusForm extends React.Component {
 									if (this.submitBtn) {
 											 alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT')
 									} else {
+											
 												console.log(
 													'SUBMITTING THE PROPS OUT OF STATUSFORM'
 												);

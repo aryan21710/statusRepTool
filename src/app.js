@@ -11,7 +11,8 @@ const report = {
   category: {},
   categoryCnt: 0,
 	categoryObj: {},
-	category: 'Miscellaneous',
+  category: 'Miscellaneous',
+
 	text: '',
 		data: [{
 			date: '',
