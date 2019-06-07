@@ -5,6 +5,10 @@ import 'react-table/react-table.css';
 export default class ViewReport extends React.Component {
 	constructor(props) {
 		super(props);
+		// this.searchText='';
+		this.state={
+			searchText:''
+		}
 	}
 
 	convertToMap=(data)=>{
@@ -39,14 +43,32 @@ export default class ViewReport extends React.Component {
 			return obj
 		})
 		return arrOfObj;
+	}
+
+	searchRep=(e)=>{
+		e.preventDefault();
+		this.setState({
+			searchText: e.target.value
+		})
+		console.log('searchText:-'+this.state.searchText);
+		if (this.state.searchText.length > 0) {
+			const allReports=JSON.parse(localStorage.data)
+			const search=allReports.filter((f)=>
+				{if (f.category.toLowerCase()==this.state.searchText.toLowerCase() 
+				|| f.status.toLowerCase()==this.state.searchText.toLowerCase()) 
+				return f
+			})
+			console.log('search :-'+JSON.stringify(search))
 		}
+
+		
+	}
 
 	
 	
 	render() {
 		console.log('4:-' + JSON.stringify(this.props.data));
-
-		let displayData = []
+		let displayData=[]
 		let d=[]
 
 				if (!localStorage.getItem('data') || localStorage.getItem('data')=='[]') {
@@ -118,8 +140,9 @@ export default class ViewReport extends React.Component {
 		return (
 			<div className="mainView">
 				<div className="createView">
-					<div className="myformView">
-						<input type="text" placeholder="SEARCH REPORT" value="" />
+					<form className="myformView">
+						<input id="textView" type="text" placeholder="SEARCH REPORT" 
+						 value={this.state.searchText} onInput={this.searchRep}/>
 						<ReactTable
 							className="-striped -highlight textAreaView"
 							data={displayData}
@@ -131,7 +154,7 @@ export default class ViewReport extends React.Component {
 								},
 							]}
 						/>
-					</div>
+					</form>
 				</div>
 			</div>
 		);
