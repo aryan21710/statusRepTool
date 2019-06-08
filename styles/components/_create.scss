@@ -18,8 +18,7 @@
 .create {
     width: 90vw;
     height: 75vh;
-    background: #e60099;
-    opacity: 0.7;
+    background: rgba(255,255,255,0.6);
     box-shadow: 5px 10px black;
     color: black;
 }
@@ -55,12 +54,12 @@
 .DateInput_input,
 .btn1,
 .DateInput, .DateInput_1 {
-    background:#99d6ff;
+    background:  #99c9ff67;
     line-height: 1rem;
     font-size: 2rem;
     padding:0;
     cursor: pointer;
-    color: #3333ff;
+    color: black;
     height: calc(var(--h)/4);
     
 }
@@ -78,10 +77,10 @@
 } 
 
 .btn2 button {
-   background:#99d6ff;
+   background:  #99c9ff67;
    font-size: 2rem;
    cursor: pointer;
-   color: #3333ff;
+   color: black;
  
 }
 

@@ -13,10 +13,9 @@
 .createView {
     width: 90vw;
     height: 75vh;
-    background: #e60099;  
+    background: rgba(255,255,255,0.6);
     padding:20px;
-    color: #3333ff;
-    opacity: 0.8;
+    color: black;
 }
 
 
@@ -31,10 +30,10 @@
 .myformView input[type="text"]
 {
 
-  color: #3333ff;
+  color: black;
   text-align: center;
   height: 40px;
-  background: #99d6ff;
+  background:  #99c9ff67;
   line-height: 10px;
   font-size: 2rem;
   padding: 0;
