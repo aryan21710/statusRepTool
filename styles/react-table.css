@@ -161,6 +161,24 @@
 .ReactTable .rt-tbody .rt-td {
     border-right: 1px solid rgba(0, 0, 0, 0.02);
 }
+
+.ReactTable .rt-tbody .rt-td:nth-child(1)
+ .ReactTable .rt-tbody .rt-td:nth-child(2)
+ .ReactTable .rt-thead .rt-td:nth-child(1)
+ .ReactTable .rt-thead .rt-td:nth-child(2) {
+    width: 50px;
+}
+
+
+
+
+.ReactTable .rt-thead .rt-td:nth-child(3)
+.ReactTable .rt-tbody .rt-td:nth-child(3) {
+    width: 200px;
+}
+
+
+
 .ReactTable .rt-tbody .rt-td:last-child {
 	border-right: 0;
 }

@@ -465,6 +465,16 @@ template {
 .ReactTable .rt-tbody .rt-td {
   border-right: 1px solid rgba(0, 0, 0, 0.02); }
 
+.ReactTable .rt-tbody .rt-td:nth-child(1)
+.ReactTable .rt-tbody .rt-td:nth-child(2)
+.ReactTable .rt-thead .rt-td:nth-child(1)
+.ReactTable .rt-thead .rt-td:nth-child(2) {
+  width: 50px; }
+
+.ReactTable .rt-thead .rt-td:nth-child(3)
+.ReactTable .rt-tbody .rt-td:nth-child(3) {
+  width: 200px; }
+
 .ReactTable .rt-tbody .rt-td:last-child {
   border-right: 0; }
 
@@ -2236,7 +2246,7 @@ table, th, td {
   width: 90vw;
   height: 75vh;
   background: rgba(255, 255, 255, 0.6);
-  padding: 20px;
+  padding: 0px 20px;
   color: black; }
 
 .myformView {
@@ -2261,10 +2271,10 @@ table, th, td {
   outline: none; }
 
 .textAreaView {
-  margin: 5vh 0vh 3vh 0vh;
+  margin: 0vh 0vh 3vh 0vh;
   grid-column-start: 1;
   grid-column-end: 9;
-  height: 55vh;
+  height: 72vh;
   font-size: 2.5rem;
   text-align: left;
   overflow: auto; }

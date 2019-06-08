@@ -141,8 +141,6 @@ export default class ViewReport extends React.Component {
 			<div className="mainView">
 				<div className="createView">
 					<form className="myformView">
-						<input id="textView" type="text" placeholder="SEARCH REPORT" 
-						 value={this.state.searchText} onInput={this.searchRep}/>
 						<ReactTable
 							className="-striped -highlight textAreaView"
 							data={displayData}
