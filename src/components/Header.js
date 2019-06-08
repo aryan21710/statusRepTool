@@ -7,7 +7,7 @@ export default ()=>{
     return (
 		<div className="header">
 			<div className="logoHeader">
-				<img src={require('./../../public/images/mylogo.png')} /> <h1>StaRt.. A Status Reporting Tool</h1>
+				<img src={require('./../../public/images/mylogo.jpg')} /> <h1>StaRt.. A Status Reporting Tool</h1>
 			</div>
 			<div className="navLinks">
 				<NavLink to='/' activeClassName='is-active' activeStyle={{ color: 'red' }} exact={true}>
