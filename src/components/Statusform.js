@@ -4,7 +4,7 @@ import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import moment from "moment";
 import ReactTable from 'react-table';
-// import 'react-table/react-table.css';
+import './../../styles/react-table.css';
 
 export default class StatusForm extends React.Component {
   constructor(props) {
@@ -120,10 +120,10 @@ export default class StatusForm extends React.Component {
 									};
 
 									console.log('DATAOBJ:-' + JSON.stringify(dataobj, null, 4));
-									this.submitBtn=false;
+									this.submitBtn = false;
 
 									this.setState({
-										 data:this.state.data.concat(dataobj)
+										data: this.state.data.concat(dataobj),
 									});
 									console.log('NEW DATA NOW:-' + JSON.stringify(this.state.data, null, 4));
 								} else {
@@ -144,44 +144,28 @@ export default class StatusForm extends React.Component {
 							defaultSorted={[
 								{
 									id: 'this.state.category',
-									desc: true
+									desc: true,
 								},
 							]}
 						/>
+						
 						<div className="btn2">
-							<button 
+							<button
 								onClick={() => {
 									if (this.submitBtn) {
-											 alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT')
+										alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT');
 									} else {
-											
-												console.log(
-													'SUBMITTING THE PROPS OUT OF STATUSFORM'
-												);
-												this.props.onSubmit({
-													createdAt: this
-														.state
-														.createdAt,
-													calFocussed: this
-														.state
-														.calFocussed,
-													categoryObj: this
-														.state
-														.categoryObj,
-													categoryCnt: this
-														.state
-														.categoryCnt,
-													category: this.state
-														.category,
-													text: this.state
-														.text,
-													data: this.state
-														.data,
-												});
+										console.log('SUBMITTING THE PROPS OUT OF STATUSFORM');
+										this.props.onSubmit({
+											createdAt: this.state.createdAt,
+											calFocussed: this.state.calFocussed,
+											categoryObj: this.state.categoryObj,
+											categoryCnt: this.state.categoryCnt,
+											category: this.state.category,
+											text: this.state.text,
+											data: this.state.data,
+										});
 									}
-											
-								
-									
 								}}
 							>
 								Submit Report

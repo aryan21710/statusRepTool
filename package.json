@@ -5,7 +5,7 @@
   "homepage": "https://aryan21710.github.io/statusRepTool",
   "main": "webpack.config.js",
   "scripts": {
-    "build:dev": "webpack",
+    "build:dev": "webpack --watch",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",

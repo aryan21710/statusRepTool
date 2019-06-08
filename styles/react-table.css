@@ -29,7 +29,7 @@
 	width: 100%;
 	border-collapse: collapse;
     overflow: auto;
-    border: 5px solid black;
+    /* border: 5px solid green; */
 }
 .ReactTable .rt-thead {
 	-webkit-box-flex: 1;
