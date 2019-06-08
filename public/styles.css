@@ -1742,7 +1742,16 @@ input::placeholder {
 	}
 	.ReactTable .-pagination .-center {
 		flex: auto;
-	}
+    }
+    
+    .ReactTable .rt-table {
+        border : 2px solid black;
+    }
+    .ReactTable .rt-resizer {
+	
+        border-left: 2px solid black;
+
+}
 }
 
 /*# sourceMappingURL=styles.css.map*/
