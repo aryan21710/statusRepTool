@@ -4,7 +4,7 @@ import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import moment from "moment";
 import ReactTable from 'react-table';
-import 'react-table/react-table.css';
+// import 'react-table/react-table.css';
 
 export default class StatusForm extends React.Component {
   constructor(props) {
