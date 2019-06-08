@@ -74,6 +74,11 @@ export default class StatusForm extends React.Component {
 							<option value="Javascript">Javascript</option>
 							<option value="Resume">Resume</option>
 							<option value="Css animation">Css animation</option>
+							<option value="WowExp">WowExp</option>
+							<option value="LogoDesign">LogoDesign</option>
+							<option value="CharDesign">CharDesign</option>
+							<option value="Comicstrip">Comicstrip</option>
+							<option value="UIDesign">UIDesign</option>
 							<option value="Category" selected>
 								Category
 							</option>
@@ -148,7 +153,7 @@ export default class StatusForm extends React.Component {
 								},
 							]}
 						/>
-						
+
 						<div className="btn2">
 							<button
 								onClick={() => {
