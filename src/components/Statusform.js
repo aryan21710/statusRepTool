@@ -71,6 +71,7 @@ export default class StatusForm extends React.Component {
 							}}
 						>
 							<option value="React">React</option>
+							<option value="Adishwar">Adishwar</option>
 							<option value="Javascript">Javascript</option>
 							<option value="Resume">Resume</option>
 							<option value="Css animation">Css animation</option>
