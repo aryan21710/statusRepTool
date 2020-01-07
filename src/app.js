@@ -6,6 +6,7 @@ import "../styles/_style.scss";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
+
 const report = {
   createdAt: "",
   category: {},

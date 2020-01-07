@@ -3,6 +3,10 @@ import {connect} from 'react-redux';
 import StatusForm from './Statusform'
 import {ViewRep} from '../action/ViewRep';
 
+/**
+ *  Create Component:- To create the status report
+ * @param {*} props props passed to Create component
+ */
 const Create=(props)=>{
     return (
         <div>

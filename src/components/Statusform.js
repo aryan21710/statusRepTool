@@ -6,12 +6,15 @@ import moment from "moment";
 import ReactTable from 'react-table';
 import './../../styles/react-table.css';
 
-export default class StatusForm extends React.Component {
-  constructor(props) {
-    super(props);
-	this.userText = "";
-	this.submitBtn=true;
-    this.state = {
+	/**
+	 * StatusForm Component:- Form which includes Inputs to Enter your Status report
+	 * @param {Object} state
+	 * @param {String} state.createdAt Time at which Status Report is Created.
+	 * @param {Boolean} state.calFocussed Calendar is Focussed or not when clicked
+	 * @param {String} state.category Category to which the status report belongs to.
+	 */
+class StatusForm extends React.Component {
+    state = {
 		createdAt: moment(),
 		calFocussed: false,
 		categoryObj: {},
@@ -20,8 +23,11 @@ export default class StatusForm extends React.Component {
 		text: '',
 		data: [],
 	};
-  }
+  
 
+  /**
+   * Submit Method:- To Submit the Form
+   */
   Submit = e => {
     e.preventDefault();
   };
@@ -41,6 +47,8 @@ export default class StatusForm extends React.Component {
 				accessor: 'status',
 			},
 		];
+		userText = "";
+		submitBtn=true;
 					
     return (
 		<div className="main">
@@ -114,7 +122,7 @@ export default class StatusForm extends React.Component {
 									this.setState({
 										categoryObj: Object.assign({}, this.state.categoryObj, obj1),
 									});
-									console.log(JSON.stringify(this.state.categoryObj, null, 4));
+									console.log('categoryObj',JSON.stringify(this.state.categoryObj, null, 4));
 
 									this.setState({
 										text: '',
@@ -126,7 +134,7 @@ export default class StatusForm extends React.Component {
 									};
 
 									console.log('DATAOBJ:-' + JSON.stringify(dataobj, null, 4));
-									this.submitBtn = false;
+									submitBtn = false;
 
 									this.setState({
 										data: this.state.data.concat(dataobj),
@@ -158,7 +166,7 @@ export default class StatusForm extends React.Component {
 						<div className="btn2">
 							<button
 								onClick={() => {
-									if (this.submitBtn) {
+									if (submitBtn) {
 										alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT');
 									} else {
 										console.log('SUBMITTING THE PROPS OUT OF STATUSFORM');
@@ -184,3 +192,5 @@ export default class StatusForm extends React.Component {
 	);
   }
 }
+
+export default StatusForm;
