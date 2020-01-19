@@ -167,7 +167,7 @@ class StatusForm extends React.Component {
 							<button
 								onClick={() => {
 									if (submitBtn) {
-										alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT');
+										alert('PLEASE ENTER WORK DONE AND CLICK ON + BEFORE SUBMIT');
 									} else {
 										console.log('SUBMITTING THE PROPS OUT OF STATUSFORM');
 										this.props.onSubmit({
