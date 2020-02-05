@@ -84,7 +84,6 @@
   position: absolute;
   top: 25vh;
   left: 38vw;
-  background: $navlink;
   width: 27vw;
   animation: slideDown 2s 1 forwards;
   z-index: 0;
@@ -93,9 +92,11 @@
 @keyframes slideDown {
   from {
     height: 0;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   to {
+    background: $navlink;
     height: 54vh;
   }
 }
