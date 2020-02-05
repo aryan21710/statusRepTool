@@ -3,14 +3,12 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: rgba(42, 27, 61, 0.6);
     position: absolute;
     top: 0vh;
     left: 0vw;
     display: flex;
     justify-content: center;
     align-items: center; 
-    border: 2px solid red;
 }
   
   .login form {
@@ -20,9 +18,10 @@
     align-items: center;
     width: 27vw;
     height: 54vh;
-    background: rgba(0, 0, 0, 0.5);
-    /* background: rgba(216, 63, 135, 0.8); */
-    position: relative; }
+    background: rgba(0, 0, 0, 0.7);
+    position: relative; 
+
+}
   
   .login form input {
     margin: 0 auto;

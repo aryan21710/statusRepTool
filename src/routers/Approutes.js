@@ -6,23 +6,16 @@ import Create from '../components/Create';
 import View from '../components/View';
 import Login from '../components/Login'
 import PagenotFound from '../../src/components/PagenotFound';
-
+import backgroundImg from '../../public/images/mainBg.jpg'
 
 
  const Approutes=()=>{
-    	var mainBg = require('./../../public/images/mainBg.jpg');
-		var bannerStyle = {
-			background: 'url(' + mainBg + ')',
-			backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100%",
-            margin: "0",
-            padding: "0",
-		};
+    
     return (
 		<BrowserRouter>
-			<div style={bannerStyle}>
-				<Header />
+			<div>
+			<img src={backgroundImg} className="commonBackground" />
+
 				<Switch>
 				<Route path="/" component={Login} exact={true} />
 					<Route path="/create" component={Create} />

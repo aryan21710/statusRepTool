@@ -8,8 +8,10 @@ import {ViewRep} from '../action/ViewRep';
  * @param {*} props props passed to Create component
  */
 const Create=(props)=>{
+
     return (
         <div>
+        <Header />
             <StatusForm onSubmit={(report)=>{
                 props.dispatch(ViewRep(report))
                 props.history.push('/view');
@@ -19,4 +21,4 @@ const Create=(props)=>{
 }
 
 
-export default connect()(Create)
+export default connect()(Create);
