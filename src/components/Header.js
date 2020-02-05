@@ -11,7 +11,7 @@ export default ()=>{
 			</div>
 			<div className="navLinks">
 				<NavLink to='/' activeClassName='is-active' activeStyle={{ color: 'red' }} exact={true}>
-					<button>ADD</button>
+					<button>ADD!!</button>
 				</NavLink>
 				<NavLink to='/view' activeClassName='is-active' activeStyle={{ color: 'red' }}>
 					<button>VIEW</button>

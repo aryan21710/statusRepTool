@@ -4,6 +4,7 @@ import { BrowserRouter, Route, link, NavLink, Switch } from 'react-router-dom';
 import Header from '../components/Header';
 import Create from '../components/Create';
 import View from '../components/View';
+import Login from '../components/Login'
 import PagenotFound from '../../src/components/PagenotFound';
 
 
@@ -23,7 +24,8 @@ import PagenotFound from '../../src/components/PagenotFound';
 			<div style={bannerStyle}>
 				<Header />
 				<Switch>
-					<Route path="/" component={Create} exact={true} />
+				<Route path="/" component={Login} exact={true} />
+					<Route path="/create" component={Create} />
 					<Route path="/view" component={View} />
 					<Route component={PagenotFound} />
 				</Switch>

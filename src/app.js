@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Approutes  from "./routers/Approutes";
 import 'normalize.css/normalize.css';
-import "../styles/_style.scss";
+import "../styles/styles.css";
+import "../styles/react-table.css"
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
@@ -46,4 +47,3 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById("app"));
-
