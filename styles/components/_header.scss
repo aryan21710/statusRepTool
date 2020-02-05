@@ -9,7 +9,7 @@
   top: 0vh;
   left: 3vw;
 }
-.logoHeader {
+.appTitle {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,48 +33,41 @@ h1 {
 .navLinks {
   margin-top: 3vh;
   width: 95vw;
+  border: 2px solid black;
+
 }
 
-a:first-child {
+.navLinks a {
   float: left;
+
 }
 
-.addBtn {
-  font-size: 1.5rem;
-  height: 6vh;
-  width: 48vw;
-  text-decoration: none;
-  text-align: center;
-  background: $navlink;
-  border-top-right-radius: 50px;
-  letter-spacing: 1px;
-  transition: all 280ms ease-out;
-  text-decoration: none;
-  outline: none;
-}
-
-
-
+.addBtn,
 .viewBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   font-size: 1.5rem;
-  height: 6vh;
-  width: 47vw;
-  border-top-right-radius: 50px;
-  letter-spacing: 1px;
-  transition: all 280ms ease-out;
+  height: 5.4vh;
+  width: 47.2vw;
   text-decoration: none;
-  outline: none;
   text-align: center;
   background: $navlink;
+  border-top-right-radius: 50px;
+  letter-spacing: 1px;
+  transition: all 280ms ease-in;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .activeButton {
-    background: lighten(rgba(7, 116, 241, 0.9), 10%);
-    letter-spacing: 1.5px;
-    font-size: 2.5rem;
-    transition: all 280ms ease-in;
-    color: white;
-  }
+  background: lighten(rgba(7, 116, 241, 0.9), 10%);
+  letter-spacing: 1.5px;
+  font-size: 2rem;
+  transition: all 280ms ease-out;
+  color: white;
+}
 
 @media screen and (max-width: 600px) {
   h1 {

@@ -50,6 +50,7 @@ class StatusForm extends React.Component {
 				category: this.state.category,
 				text: this.state.text,
 				data: this.state.data,
+				onSubmit: this.state.onSubmit
 			});
 		}
 	  }

@@ -4,14 +4,12 @@ import { connect } from "react-redux";
 import { userlogin } from "./../action/userLogin";
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      passwd: "",
-      loginStatus: ""
-    };
-  }
+  state = {
+    email: "",
+    passwd: "",
+    loginStatus: "",
+    mouseOverLogin: false
+  };
 
   enteruname = e => {
     console.log(`E.TARGET.NAME IS CHANGED:- ${e.target.name}`);
@@ -105,8 +103,20 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login">
-        <form onSubmit={this.submitCredentials}>
+      <div
+        className="login"
+        onMouseMove={() => {
+          this.setState({
+            mouseOverLogin: true
+          });
+        }}
+      >
+        <form
+          onSubmit={this.submitCredentials}
+          className={
+            this.state.mouseOverLogin ? "loginForm animateLogin" : "loginForm"
+          }
+        >
           <p>Login</p>
           <hr />
 

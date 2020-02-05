@@ -1,80 +1,109 @@
-
 .login {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: absolute;
-    top: 0vh;
-    left: 0vw;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
 }
-  
-  .login form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 27vw;
+
+.loginForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 25vh;
+  left: 38vw;
+  width: 27vw;
+  height: 54vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1000;
+  border-radius: 20px;
+}
+
+.login form input {
+  margin: 0 auto;
+  width: 24vw;
+  height: 6vh;
+  border-radius: 20px;
+  outline: none;
+  background: rgba(42, 27, 61, 0.6);
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.uname {
+  position: absolute;
+  top: 18vh;
+}
+
+.uname:focus,
+.passwd:focus {
+  background: rgba(42, 27, 61, 0.6);
+}
+
+.passwd {
+  position: absolute;
+  top: 28vh;
+}
+
+.loginBtn {
+  position: absolute;
+  width: 50%;
+  height: 5vh;
+  left: 25%;
+  text-decoration: none;
+  outline: none;
+  top: 38vh;
+  border-radius: 20px;
+  background: rgba(42, 27, 61, 0.6);
+  color: white;
+}
+
+.login form input::placeholder {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.login form p {
+  color: white;
+  font-size: 25px;
+  width: 24vw;
+  position: absolute;
+  top: 5vh;
+  left: 2vw;
+}
+
+.animateLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25vh;
+  left: 38vw;
+  background: $navlink;
+  width: 27vw;
+  animation: slideDown 2s 1 forwards;
+  z-index: 0;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+
+  to {
     height: 54vh;
-    background: rgba(0, 0, 0, 0.7);
-    position: relative; 
-
+  }
 }
-  
-  .login form input {
-    margin: 0 auto;
-    width: 24vw;
-    height: 6vh;
-    border-radius: 20px;
-    outline: none;
-    background: rgba(42, 27, 61, 0.6);
-    color: white;
-    text-align: center;
-    font-size: 1.2rem; }
-  
-  .uname {
-    position: absolute;
-    top: 18vh; }
-  
-  .uname:focus,
-  .passwd:focus {
-    background: rgba(42, 27, 61, 0.6); }
-  
-  .passwd {
-    position: absolute;
-    top: 28vh; }
-  
-  .loginBtn {
-    position: absolute;
-    width: 50%;
-    height: 5vh;
-    left: 25%;
-    text-decoration: none;
-    outline: none;
-    top: 38vh;
-    border-radius: 20px;
-    background: rgba(42, 27, 61, 0.6);
-    color: white; }
-  
-  .login form input::placeholder {
-    color: white;
-    text-align: center;
-    font-size: 1.2rem; }
-  
-  .login form p {
-    color: white;
-    font-size: 25px;
-    width: 24vw;
-    position: absolute;
-    top: 5vh;
-    left: 2vw; }
-
 
 hr {
-    position: absolute;
-    top: 11vh;
-    width: 24vw;
-    height: 1px;
-    background: white; }
+  position: absolute;
+  top: 12vh;
+  width: 24vw;
+  height: 1px;
+  background: white;
+}
