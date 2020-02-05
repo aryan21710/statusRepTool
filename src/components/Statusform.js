@@ -47,8 +47,7 @@ class StatusForm extends React.Component {
 				accessor: 'status',
 			},
 		];
-		userText = "";
-		submitBtn=true;
+		let submitBtn=true;
 					
     return (
 		<div className="main">
@@ -134,7 +133,7 @@ class StatusForm extends React.Component {
 									};
 
 									console.log('DATAOBJ:-' + JSON.stringify(dataobj, null, 4));
-									submitBtn = false;
+						         	submitBtn = false;
 
 									this.setState({
 										data: this.state.data.concat(dataobj),

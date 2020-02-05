@@ -7,12 +7,16 @@
     align-items: center;
     margin: 0;
     padding:0;
-    // border: 2px solid red;
+    position: absolute;
+    top: 0vh;
+    left: 8vw;
 }
 .logoHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
+        // border: 2px solid black;
+
 }
 
 img {
@@ -31,22 +35,35 @@ h1 {
 
 .navLinks {
     margin-top: 3vh;
-   
+    width: 90vw;
 }
  
 a:first-child {
  float: left;
 }
 
-a.is-active button, a button {
-        margin: 0;
-        padding:10px;
-        font-size: 2rem;
-        width: 45vw;
+
+
+.addBtn {
+    margin-right: 7vw;
+    font-size: 2rem;
+    height: 6vh;
+    width: 33vw;
+    text-decoration: none;
+    text-align:center;
+    background: $navlink;
+
+}
+
+.viewBtn {
+    margin-right: 0;
+    font-size: 2rem;
         height: 6vh;
-        text-decoration: none;
-        text-align:center;
-        background : #99c9ff67;
+        width: 50vw;
+
+    text-decoration: none;
+    text-align:center;
+    background: $navlink;
 }
 
 

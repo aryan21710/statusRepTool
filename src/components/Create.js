@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import StatusForm from './Statusform'
 import {ViewRep} from '../action/ViewRep';
+import Header from '../components/Header';
+
 
 /**
  *  Create Component:- To create the status report
