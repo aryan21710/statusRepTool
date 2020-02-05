@@ -1,5 +1,4 @@
 import {NavLink} from 'react-router-dom';
-import logo from '../../public/images/mylogo.jpg';
 import React, { Component } from 'react';
 import { compose } from 'redux';
 

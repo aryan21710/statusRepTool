@@ -22,6 +22,7 @@ class StatusForm extends React.Component {
 		category: 'Miscellaneous',
 		text: '',
 		data: [],
+		onSubmit: false
 	};
   
 
@@ -31,6 +32,28 @@ class StatusForm extends React.Component {
   Submit = e => {
     e.preventDefault();
   };
+
+  handleSubmit=()=>{
+	  this.setState({
+		  onSubmit: !this.state.onSubmit
+	  })
+  }
+
+  componentDidUpdate(prevProps,prevState) {
+	  if (prevState.onSubmit !== this.state.onSubmit) {
+			console.log('SUBMITTING THE PROPS OUT OF STATUSFORM');
+			this.props.onSubmit({
+				createdAt: this.state.createdAt,
+				calFocussed: this.state.calFocussed,
+				categoryObj: this.state.categoryObj,
+				categoryCnt: this.state.categoryCnt,
+				category: this.state.category,
+				text: this.state.text,
+				data: this.state.data,
+			});
+		}
+	  }
+  
 
   render() {
 	   const columns = [
@@ -47,7 +70,6 @@ class StatusForm extends React.Component {
 				accessor: 'status',
 			},
 		];
-		let submitBtn=true;
 					
     return (
 		<div className="main">
@@ -105,7 +127,7 @@ class StatusForm extends React.Component {
 							}}
 						/>
 						<button
-							className="btn1"
+							className="addReportBtn"
 							onClick={e => {
 								if (this.state.text.length > 0 && this.state.text != '') {
 									console.log('ADD REPORT NOW');
@@ -133,7 +155,6 @@ class StatusForm extends React.Component {
 									};
 
 									console.log('DATAOBJ:-' + JSON.stringify(dataobj, null, 4));
-						         	submitBtn = false;
 
 									this.setState({
 										data: this.state.data.concat(dataobj),
@@ -162,24 +183,11 @@ class StatusForm extends React.Component {
 							]}
 						/>
 
-						<div className="btn2">
+						<div className="submitReportBtn">
 							<button
-								onClick={() => {
-									if (submitBtn) {
-										alert('PLEASE ENTER WORK DONE AND CLICK ON + BEFORE SUBMIT');
-									} else {
-										console.log('SUBMITTING THE PROPS OUT OF STATUSFORM');
-										this.props.onSubmit({
-											createdAt: this.state.createdAt,
-											calFocussed: this.state.calFocussed,
-											categoryObj: this.state.categoryObj,
-											categoryCnt: this.state.categoryCnt,
-											category: this.state.category,
-											text: this.state.text,
-											data: this.state.data,
-										});
-									}
-								}}
+								onClick={this.handleSubmit}
+
+								
 							>
 								Submit Report
 							</button>

@@ -10,11 +10,11 @@ import Header from '../components/Header';
  * @param {*} props props passed to Create component
  */
 const Create=(props)=>{
-
     return (
         <div>
         <Header />
             <StatusForm onSubmit={(report)=>{
+                console.log('INSIDE Create.JS PROPS:-',report)
                 props.dispatch(ViewRep(report))
                 props.history.push('/view');
             }}/>

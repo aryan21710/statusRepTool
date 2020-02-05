@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import Header from './Header'
 
 export default class ViewReport extends React.Component {
 	constructor(props) {
@@ -139,6 +140,8 @@ export default class ViewReport extends React.Component {
 
 		return (
 			<div className="mainView">
+			<Header/>
+
 				<div className="createView">
 					<form className="myformView">
 						<ReactTable
