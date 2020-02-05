@@ -1,90 +1,97 @@
-
-
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding:0;
-    position: absolute;
-    top: 0vh;
-    left: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0vh;
+  left: 3vw;
 }
 .logoHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-        // border: 2px solid black;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // border: 2px solid black;
 }
 
 img {
-    width: 90px;
-    height: 50px;
-    object-fit: cover;
-    margin-right: 10px;
+  width: 90px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 h1 {
-        padding: 1vh 2vw;
-        color:black;
-        font-size: 3rem;
-        text-shadow:2px 2px pink;
+  padding: 1vh 2vw;
+  color: black;
+  font-size: 3rem;
+  text-shadow: 2px 2px pink;
 }
 
 .navLinks {
-    margin-top: 3vh;
-    width: 90vw;
+  margin-top: 3vh;
+  width: 95vw;
 }
- 
+
 a:first-child {
- float: left;
+  float: left;
 }
-
-
 
 .addBtn {
-    margin-right: 7vw;
-    font-size: 2rem;
-    height: 6vh;
-    width: 33vw;
-    text-decoration: none;
-    text-align:center;
-    background: $navlink;
-
+  font-size: 2rem;
+  height: 6vh;
+  width: 48vw;
+  text-decoration: none;
+  text-align: center;
+  background: $navlink;
+  border-top-right-radius: 50px;
+  letter-spacing: 1px;
+  transition: all 280ms ease-out;
+  text-decoration: none;
+  outline: none;
 }
+
+
 
 .viewBtn {
-    margin-right: 0;
-    font-size: 2rem;
-        height: 6vh;
-        width: 50vw;
-
-    text-decoration: none;
-    text-align:center;
-    background: $navlink;
+  font-size: 2rem;
+  height: 6vh;
+  width: 47vw;
+  border-top-right-radius: 50px;
+  letter-spacing: 1px;
+  transition: all 280ms ease-out;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  background: $navlink;
 }
 
+.activeButton {
+    background: lighten(rgba(7, 116, 241, 0.9), 10%);
+    letter-spacing: 1.5px;
+    font-size: 2.5rem;
+    transition: all 280ms ease-in;
+    color: white;
+  }
 
-@media screen and (max-width:600px) {
-   
-    h1 {
-        font-size: 1.5rem;
-        padding:0;
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
 
-    }
+  a.is-active button,
+  a button {
+    font-size: 1.5rem;
+    width: 20vw;
+    height: 5vh;
+    padding-bottom: 10px;
+  }
 
-    a.is-active button, a button  {
-        font-size: 1.5rem;
-        width: 20vw;
-        height: 5vh;
-        padding-bottom: 10px
-    }
-
-    img {
-        width: 50px;
-        height: 30px;
-    }
+  img {
+    width: 50px;
+    height: 30px;
+  }
 }
-

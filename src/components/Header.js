@@ -1,25 +1,42 @@
-import React from 'react';
 import {NavLink} from 'react-router-dom';
 import logo from '../../public/images/mylogo.jpg';
+import React, { Component } from 'react';
+import { compose } from 'redux';
 
+class Header extends Component{
+	state={
+		isActive:true
+	}
 
-export default ()=>{
+	handleClick=()=>{
+		this.setState({
+			isActive: !this.state.isActive
+		})
+	}
 
-    return (
-		<div className="header">
-			<div className="logoHeader">
-				 <h1>StaRt.. A Status Reporting Tool</h1>
-			</div>
-			<div className="navLinks">
-				<NavLink to='/' activeClassName='is-active'  exact={true}>
-					<button className='addBtn'
-					>ADD</button>
-				</NavLink>
-				<NavLink to='/view' activeClassName='is-active' activeStyle={{ color: 'red' }}>
-					<button className='viewBtn'
+	render(){
+		return (
+			<div className="header">
+				<div className="logoHeader">
+					 <h1>StaRt.. A Status Reporting Tool</h1>
+				</div>
+				<div className="navLinks">
+					<NavLink to='/' activeClassName='is-active'  exact={true}>
+						<button className={this.state.isActive ?  "addBtn activeButton" : "addBtn"}
+						onClick={this.handleClick}
+						>ADD</button>
+					</NavLink>
+					<NavLink to='/view' activeClassName='is-active'>
+					<button className={this.state.isActive ? "viewBtn" : "viewBtn activeButton"}
+					onClick={this.handleClick}
 					>VIEW</button>
-				</NavLink>
+					</NavLink>
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
+
+  
 }
+
+export default Header;

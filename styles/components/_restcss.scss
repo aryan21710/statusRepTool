@@ -4,11 +4,11 @@
     height: 80vh; 
     position: absolute;
     top: 20vh;
-    left: 8vw;
+    left: 3vw;
 }
   
   .create {
-    width: 90vw;
+    width: 95vw;
     height: 75vh;
     background: rgba(255, 255, 255, 0.75);
     color: black;
@@ -87,6 +87,15 @@
     text-align: center;
     font-size: 2rem;
     cursor: pointer; }
+
+
+.btn1:hover, .btn2 button:hover {
+    background: lighten(rgba(205,20,20,1), 10%);
+    letter-spacing: 1.5px;
+    font-size: 2.5rem;
+    transition: all 280ms ease-in;
+    color: white;
+}
   
   @media screen and (max-width: 600px) {
     body {
