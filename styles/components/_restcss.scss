@@ -3,8 +3,9 @@
   justify-content: center;
   height: 80vh;
   position: absolute;
-  top: 20vh;
+  top: 18.5vh;
   left: 3vw;
+
 }
 
 .create {
@@ -25,7 +26,7 @@
   display: grid;
   grid-template-columns: minmax(auto, 10vw) minmax(auto, 10vw) minmax(
       auto,
-      59vw
+      67vw
     ) minmax(auto, 3vw);
   align-items: center;
   grid-gap: 1vw;
@@ -64,6 +65,8 @@
   text-align: center;
 }
 
+
+
 .textarea1:focus,
 .textarea1:focus {
   background: #cccccc;
@@ -86,6 +89,8 @@
   font-size: 2rem;
   text-align: left;
   height: calc(var(--h) / 4);
+  line-height: normal;
+  line-height: calc(var(--h) / 4);
 }
 
 .textarea2 {
