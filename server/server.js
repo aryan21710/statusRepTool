@@ -6,7 +6,9 @@ const port = process.env.PORT || 4000;
 app.use(express.static(publicPath));
 console.log('PUBLICPATH:-' + publicPath);
 
-
+app.get('*', (req, res) => {
+	res.sendFile(path.join(publicPath, 'dist/index.html'));
+});
 
 app.listen(port, () => {
 	console.log('SERVER LISTENING ON:-' + port);

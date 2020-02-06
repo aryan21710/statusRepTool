@@ -5,7 +5,6 @@
   position: absolute;
   top: 18.5vh;
   left: 3vw;
-
 }
 
 .create {
@@ -24,10 +23,9 @@
 
 .addRepDiv {
   display: grid;
-  grid-template-columns: minmax(auto, 10vw) minmax(auto, 10vw) minmax(
-      auto,
-      67vw
-    ) minmax(auto, 3vw);
+  grid-template-columns:
+    minmax(auto, 10vw) minmax(auto, 10vw) minmax(auto, 67vw)
+    minmax(auto, 3vw);
   align-items: center;
   grid-gap: 1vw;
   width: 100%;
@@ -65,8 +63,6 @@
   text-align: center;
 }
 
-
-
 .textarea1:focus,
 .textarea1:focus {
   background: #cccccc;
@@ -83,6 +79,8 @@
   font-size: 2rem;
   cursor: pointer;
   color: black;
+  text-decoration: none;
+  outline: none;
 }
 
 .textarea1 {

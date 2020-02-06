@@ -82,7 +82,8 @@
   top: 0vh;
   left: 0vw;
   width: 27vw;
-  background : $navlink;
+  background : $secondaryLoginBkg;
+  border-radius: 20px;
   z-index: 0;
 }
 
@@ -104,7 +105,7 @@
   }
 
   to {
-    background: $navlink;
+    background: $secondaryLoginBkg;
     height: 54vh;
   }
 }
