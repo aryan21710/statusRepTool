@@ -38,7 +38,11 @@ class Login extends React.Component {
             value={this.state.passwd}
             onChange={this.enterpasswd}
           />
-          <button className="loginBtn">Login</button>
+		  <button className="loginBtn"
+		  onClick={()=>{
+			  this.props.history.push('/create')
+		  }}
+		  >Login</button>
         </form>
       </div>
     );
