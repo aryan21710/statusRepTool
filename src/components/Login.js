@@ -7,116 +7,19 @@ class Login extends React.Component {
   state = {
     email: "",
     passwd: "",
-    loginStatus: "",
-    mouseOverLogin: false
+    loginStatus: ""
   };
 
-  enteruname = e => {
-    console.log(`E.TARGET.NAME IS CHANGED:- ${e.target.name}`);
-    this.setState(
-      {
-        email: e.target.value
-      },
-      () => {
-        console.log(this.state.email.match(/admin/g));
-      }
-    );
-  };
+  enteruname = e => this.setState({ email: e.target.value });
+  enterpasswd = e => this.setState({ passwd: e.target.value });
 
-  enterpasswd = e => {
-    // console.log(`E.TARGET.NAME IS CHANGED:- ${e.target.name}`);
-    this.setState({
-      passwd: e.target.value
-    });
-  };
-
-  submitCredentialsWithAxios = e => {
-    e.preventDefault();
-    axios
-      .post(
-        "./login",
-        {
-          user: {
-            email: this.state.email,
-            passwd: this.state.passwd
-          }
-        },
-
-        { withCredentials: true }
-      )
-      .then(res => {
-        console.log("RESPONSE BACK FROM SERVER:-" + JSON.stringify(res));
-        if (
-          this.state.email.length > 0 &&
-          this.state.passwd.length > 0 &&
-          this.state.email.match(/admin/g).length > 0
-        ) {
-          // console.log('THIS.PROPS:-'+JSON.stringify(this.props));
-          this.setState({
-            loginStatus: "Logged In"
-          });
-          this.props.dispatch(
-            userlogin({
-              email: this.state.email,
-              passwd: this.state.passwd
-            })
-          );
-          if (this.state.email.split("@")[0] === "admin") {
-            this.props.history.push("/create");
-          } else {
-            this.props.history.push("/create");
-          }
-        }
-      })
-      .catch(error => {
-        console.log("ERROR OCCURED:-" + error);
-        alert("USER DOES NOT EXIST. LOGIN WITH A VALID USER");
-      });
-
-    // console.log(JSON.stringify(this.props));
-  };
-
-  submitCredentials = e => {
-    e.preventDefault();
-    try {
-      if (
-        this.state.email.length > 0 &&
-        this.state.passwd.length > 0 &&
-        this.state.email.match(/admin/g).length > 0
-      ) {
-        this.setState({
-          loginStatus: "Logged In"
-        });
-        // this.props.dispatch(userlogin({
-        // 	email:this.state.email,
-        // 	passwd:this.state.passwd
-        // }));
-        if (this.state.email.split("@")[0] === "admin") {
-          this.props.history.push("/create");
-        }
-      }
-    } catch (err) {
-      console.log("ERROR OCCURED:-" + error);
-      alert("USER DOES NOT EXIST. LOGIN WITH A VALID USER");
-    }
-  };
+  submitCredentials = e => e.preventDefault();
 
   render() {
     return (
-      <div
-        className="login"
-        onMouseMove={() => {
-          this.setState({
-            mouseOverLogin: true
-          });
-        }}
-      >
-        <form
-          onSubmit={this.submitCredentials}
-          className={
-            this.state.mouseOverLogin ? "loginForm animateLogin" : "loginForm"
-          }
-        >
+      <div className="login">
+        <form onSubmit={this.submitCredentials} className="loginForm">
+          <div className="secondaryBkgLogin"></div>
           <p>Login</p>
           <hr />
 
