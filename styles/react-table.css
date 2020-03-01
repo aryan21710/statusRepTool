@@ -211,6 +211,8 @@
 }
 .ReactTable .rt-th,
 .ReactTable .rt-td {
+	border-left: 2px solid black;
+
 	-webkit-box-flex: 1;
 	-ms-flex: 1 0 0px;
 	flex: 1 0 0;
@@ -265,7 +267,6 @@
 	right: -18px;
 	cursor: col-resize;
     z-index: 10;
-        border-left: 2px solid black;
 
 }
 .ReactTable .rt-tfoot {
