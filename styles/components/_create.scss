@@ -11,8 +11,9 @@
     display: flex;
     justify-content: center;
     height: 80vh;
-
-
+    position: absolute;
+    top: 18.1vh;
+    left: 3vw;
 }
 
 .create {
@@ -21,6 +22,7 @@
     // background: rgba(255,255,255,0.6);
     // box-shadow: 5px 10px black;
     color: black;
+
 }
 
 .myForm {

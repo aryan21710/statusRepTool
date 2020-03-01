@@ -2,7 +2,8 @@
 
 html {
     box-sizing: border-box;
-    font-size: 62.5% //#KEYWORDS:- [rem to px conversion] THIS WILL MAKE 1rem=10px;
+    font-size: 62.5%;//#KEYWORDS:- [rem to px conversion] THIS WILL MAKE 1rem=10px;
+    overflow: hidden;
 }
 
 body {
