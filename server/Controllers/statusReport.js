@@ -1,14 +1,16 @@
 const StatusModel = require("../Models/statusReport");
 
 const postStatus = (req, res) => {
-  if (req.body == null || !req.body.statusReport) {
+    console.log('req.body',req.body)
+  if (req.body == null ) {
     return res.status(400).send("NO STATUS REPORT RECEVIED FROM THE FRONTEND.");
   }
 
   const userId = req.signedInUser._id;
-  const { statusReport } = req.body;
+  console.log(`request came for ${userId}`)
+  const statusReport = req.body;
 
-  StatusModel.find({ _id: userId }).exec((err, report) => {
+  StatusModel.find({ _id: userId }).populate("userIdForBackend").exec((err, report) => {
     if (err || !report) {
       return res
         .status(401)
@@ -34,7 +36,8 @@ const postStatus = (req, res) => {
 
 const getAllStatusReports = (req, res) => {
   const userId = req.signedInUser._id;
-  StatusModel.find({ _id: userId }).exec((err, reports) => {
+  console.log(`REQUEST TO GETALLSTATUS CAME FOR ${userId}`)
+  StatusModel.find({ userIdForBackend: userId }).exec((err, reports) => {
     if (err || !reports) {
       return res
         .status(401)

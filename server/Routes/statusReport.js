@@ -2,12 +2,17 @@
 const express = require('express');
 const router= express.Router()
 
+const {
+    requireSignIn,
+    isUserAuthenticated,
+    userById
+  } = require("../Controllers/auth.js");
+
 const {postStatus,getAllStatusReports}=require('../Controllers/statusReport')
-const {userById}=require('../Controllers/auth')
 
 router.param('userId',userById)
-router.post('/postStatus/:userId',postStatus)
-router.get('/getAllStatusReports/:userId',getAllStatusReports)
+router.post('/poststatus/:userId',requireSignIn,isUserAuthenticated,postStatus)
+router.get('/getallstatus/:userId',requireSignIn,isUserAuthenticated,getAllStatusReports)
 
 
 module.exports= router
