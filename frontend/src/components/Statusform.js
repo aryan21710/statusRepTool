@@ -4,7 +4,7 @@ import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import moment from "moment";
 import ReactTable from "react-table";
-import "./../../styles/react-table.css";
+import "../../styles/react-table.css";
 
 /**
  * StatusForm Component:- Form which includes Inputs to Enter your Status report

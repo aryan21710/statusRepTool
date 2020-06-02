@@ -10,8 +10,8 @@ const expressValidator = require('express-validator');
 require("dotenv").config();
 
 const app = express();
-const publicPath = path.join(__dirname, '..', 'public');
-const port = process.env.PORT || 4000;
+const publicPath = path.join(__dirname, '..', 'frontend/public');
+const port = process.env.PORT || 8002;
 // IMPORT ALL MIDDLEWARES
 
 // BODYPARSER is needed to get access to post data. It will give access to request.body and convert it into JSON object.
@@ -37,6 +37,8 @@ console.log('PUBLICPATH:-' + publicPath);
 
 // IMPORT ROUTES
 const authRoutes = require("./Routes/auth.js");
+const statusRoutes = require("./Routes/statusReport.js");
+
 
 // Connect to the MONGOOSE DB
 mongoose
@@ -48,6 +50,11 @@ mongoose
   .then(() => {
     console.log("CONNECTED TO DATABASE");
   });
+
+
+app.use('/userauth',authRoutes)
+app.use('/status',statusRoutes)
+
 
 app.get('*', (req, res) => {
 	res.sendFile(path.join(publicPath, 'dist/index.html'));
