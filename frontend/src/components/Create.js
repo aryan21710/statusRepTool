@@ -17,7 +17,7 @@ const Create = () => {
         onSubmit={(reports) => {
           console.log("INSIDE Create.JS PROPS:-", reports);
           dispatch(postStatusAction(reports));
-          history.push("/view");
+          // history.push("/view");
         }}
       />
     </div>

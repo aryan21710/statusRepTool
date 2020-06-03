@@ -2,7 +2,10 @@ const StatusModel = require("../Models/statusReport");
 const async = require("async");
 
 const postStatus = (req, res) => {
-  console.log("req.body", req.body);
+  console.log("*************************************************");
+
+  const { reportsWithUserIdAppended } = req.body;
+  console.log("reportsWithUserIdAppended", reportsWithUserIdAppended);
 
   if (req.body == null) {
     return res.status(400).send("NO STATUS REPORT RECEVIED FROM THE FRONTEND.");
@@ -11,7 +14,7 @@ const postStatus = (req, res) => {
   const userId = req.signedInUser._id;
   console.log(`request came for ${userId}`);
 
-  StatusModel.find({ _id: userId })
+  StatusModel.find({ userIdForBackend: userId })
     .populate("userIdForBackend")
     .exec((err, report) => {
       if (err || !report) {
@@ -19,24 +22,25 @@ const postStatus = (req, res) => {
           .status(401)
           .json({ error: `NO STATUS report FOUND FOR ${userId}` });
       }
-      console.log("report found", report);
-      const { reportsWithUserIdAppended } = req.body;
+      console.log("no of reports present", report);
 
       // ASYNC FOREACH TO ITERATE OVER ASYNC OPERATION IN AN ARRAY.
-      async.each(reportsWithUserIdAppended, function(report,callback) {
-        console.log(`iterating over report ${JSON.stringify(report)}`);
-        const statusDocument = new StatusModel(report);
+      async.each(
+        reportsWithUserIdAppended,
+        function(report, callback) {
+          const statusDocument = new StatusModel(report);
 
-        statusDocument.save((error, report) => {
-          console.log("error", error);
-          console.log("STATUS REPORT SUCCESSFULLY SAVED", report);
-          error ? callback(error) : callback()
-          
-        });
-      }, function(err) {
-           console.log('in err block')
-          return err ? res.status(400).json({error: err}) : res.send(reportsWithUserIdAppended)
-      });
+          statusDocument.save((error, report) => {
+            console.log("error", error);
+            error ? callback(error) : callback();
+          });
+        },
+        function(err) {
+          return err
+            ? res.status(400).json({ error: err })
+            : res.send(reportsWithUserIdAppended);
+        }
+      );
     });
 };
 
@@ -49,7 +53,6 @@ const getAllStatusReports = (req, res) => {
         .status(401)
         .json({ error: `NO STATUS reports FOUND FOR ${userId}` });
     }
-    console.log("reports found", reports);
     return res.send(reports);
   });
 };

@@ -80,7 +80,6 @@ const userById = (req, res, next, id) => {
     }
     user.salt = undefined;
     user.hashed_password = undefined;
-    console.log("req.user", user);
     req.signedInUser = user;
     next();
   });

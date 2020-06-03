@@ -42,11 +42,14 @@ export const statusReducer = (state = initialState, action) => {
       }
 
       case GET_ALL_STATUS_REP_SUCCESS: {
+          console.log('action.data in GET_ALL_STATUS_REP_SUCCESS',action.data)
+       
         return {  loading: false,
             error: null,
             success: true,
             ...state,
-            data: [...action.data] };
+            data: [...action.data]
+         };
       }
 
       case GET_ALL_STATUS_REP_FAILURE: {
