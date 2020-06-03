@@ -1,20 +1,30 @@
 import React from 'react';
+import { shallowEqual, useSelector } from "react-redux";
 import ViewReport from './ViewReport';
-import {connect} from 'react-redux';
 
 
-const View= (props)=>{
+
+const View= ()=>{
+
+    const loading = useSelector(
+        (state) => state.statusReducer.loading,
+        shallowEqual
+      );
+
+      const data = useSelector(
+        (state) => state.statusReducer.data,
+        shallowEqual
+      );
+
+      
+
     return (
         <div>      
-           <ViewReport data={props.data}/>    
+           <ViewReport data={data}/>    
         </div>
     )
 }
 
-const mapStateToProps=(state)=>{
-    return {
-        data: state.data
-    }
-}
 
-export default connect(mapStateToProps)(View);
+
+export default React.memo(View);

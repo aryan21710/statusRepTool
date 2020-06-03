@@ -35,7 +35,7 @@ const postStatus = (req, res) => {
         });
       }, function(err) {
            console.log('in err block')
-          return err ? res.status(400).json({error: err}) : res.json({message: "ALL REPORTS SAVED"})
+          return err ? res.status(400).json({error: err}) : res.send(reportsWithUserIdAppended)
       });
     });
 };
