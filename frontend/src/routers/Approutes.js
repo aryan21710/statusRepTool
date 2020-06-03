@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter, Route, link, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Create from '../components/Create';
 import View from '../components/View';
 import Login from '../components/Login'

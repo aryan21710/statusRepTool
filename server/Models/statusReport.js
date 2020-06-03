@@ -19,7 +19,7 @@ const statusSchema=mongoose.Schema({
     userIdForBackend: signInEmailSchema,
     date: reqdTrimSchema,
     category: reqdTrimSchema,
-    description: reqdTrimSchema,
+    status: reqdTrimSchema,
 
 }, { timestamps: true }
 )

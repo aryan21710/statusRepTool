@@ -56,6 +56,9 @@ class StatusForm extends React.Component {
         onSubmit: this.state.onSubmit
       });
     }
+
+    if (prevState.data !== this.state.data) {
+    }
   }
 
   render() {

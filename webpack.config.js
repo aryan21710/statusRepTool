@@ -4,7 +4,7 @@ const webpack = require("webpack");
 module.exports = () => {
   return {
     mode: "production",
-    entry: path.join(__dirname, "frontend/src/app.js"),
+    entry: ["babel-polyfill",path.join(__dirname, "frontend/src/app.js")],
     devServer: {
       contentBase: path.join(__dirname, "frontend/public", "dist"),
       hot: true,
