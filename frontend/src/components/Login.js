@@ -39,7 +39,7 @@ class Login extends React.Component {
           />
 		  <button className="loginBtn"
 		  onClick={()=>{
-			  this.props.history.push('/create')
+			  this.props.history.push('/view')
 		  }}
 		  >Login</button>
         </form>

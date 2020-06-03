@@ -2,6 +2,9 @@ import {
   STATUS_REP_SUCCESS,
   STATUS_REP_LOADING,
   STATUS_REP_FAILURE,
+  GET_ALL_STATUS_REP_SUCCESS,
+  GET_ALL_STATUS_REP_LOADING,
+  GET_ALL_STATUS_REP_FAILURE,
 } from "../../../common/constants";
 
 const initialState = {
@@ -32,8 +35,26 @@ export const statusReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: true, success: false };
     }
 
-    default : {
-        return state
-    }
+ 
+
+    case GET_ALL_STATUS_REP_LOADING: {
+        return { ...state, loading: true, error: null, success: false };
+      }
+
+      case GET_ALL_STATUS_REP_SUCCESS: {
+        return {  loading: false,
+            error: null,
+            success: true,
+            ...state,
+            data: [...action.data] };
+      }
+
+      case GET_ALL_STATUS_REP_FAILURE: {
+        return { ...state, loading: false, error: true, success: false  };
+      }
+
+      default : {
+          return state
+      }
   }
 };
