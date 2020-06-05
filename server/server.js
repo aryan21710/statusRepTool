@@ -42,7 +42,7 @@ const statusRoutes = require("./Routes/statusReport.js");
 
 // Connect to the MONGOOSE DB
 mongoose
-  .connect(process.env.MONGOLAB_COBALT_URI || process.env.DATABASE, {
+  .connect(process.env.MONGODB_URI || process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true 
@@ -65,5 +65,3 @@ app.listen(port, () => {
 });
 
 
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWQ2OThjMjk3NjIwZGY4NDMxYjVmN2EiLCJyb2xlIjowLCJpYXQiOjE1OTExMjIyNDd9.79BWVzTmUQEHj47syHFmMKUlCwzcDIflJbzZJ_V1QeE
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWQ2OThjMjk3NjIwZGY4NDMxYjVmN2EiLCJyb2xlIjowLCJpYXQiOjE1OTExMjQ3Mzh9.gUnGYfAyJUYsWlj7JJlajMZFJp5ZDxdmVv_IVIt4-WI
