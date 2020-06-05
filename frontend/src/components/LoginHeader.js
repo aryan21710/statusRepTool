@@ -7,6 +7,7 @@ const LoginHeader = () => {
       <NavLink
         activeStyle={{ textDecoration: "none", color: "white" }}
         className="signInHeader"
+        exact={true}
         to="/"
       >
         SIGNIN
@@ -15,6 +16,7 @@ const LoginHeader = () => {
       <NavLink
         activeStyle={{ textDecoration: "none", color: "white" }}
         className="signUpHeader"
+        exact={true}
         to="/signup"
       >
         SIGNUP
