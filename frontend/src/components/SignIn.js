@@ -6,7 +6,7 @@ import { shallowEqual, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { signUpAction,signInAction } from "../redux/action/LoginAction";
 
-import { saveJwtToLocalStorage } from "../api/userAuth";
+import { signout,saveJwtToLocalStorage } from "../api/userAuth";
 
 
 const SignIn=()=>{
@@ -19,6 +19,7 @@ const SignIn=()=>{
 
   useEffect(() => {
     emailInput.current.focus();
+    signout()
   }, []);
 
   const [values, setValues] = useState({

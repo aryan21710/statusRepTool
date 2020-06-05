@@ -8,10 +8,9 @@ import { getAllStatusAction } from "../redux/action/statusAction";
 
 const View = () => {
     const dispatch = useDispatch();
-    const userId= "5ed69dc12cbbd2f967f4ced6"
 
   useEffect(() => {
-    dispatch(getAllStatusAction(userId));
+    dispatch(getAllStatusAction());
 }, []);
 
   const loading = useSelector(

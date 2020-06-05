@@ -38,7 +38,6 @@ const signUp = (req, res, next) => {
       });
     }
     UserCredModel.findOne({ email: email }, (error, user) => {
-      console.log(error, ":", user);
       if (error || !user) {
         return res.status(400).json({
           error: "INVALID EMAIL ID. PLEASE SIGNUP",

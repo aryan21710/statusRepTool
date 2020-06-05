@@ -12,7 +12,7 @@ const {postStatus,getAllStatusReports}=require('../Controllers/statusReport')
 
 router.param('userId',userById)
 router.post('/poststatus/:userId',requireSignIn,isUserAuthenticated,postStatus)
-router.get('/getallstatus/:userId',getAllStatusReports)
+router.get('/getallstatus/:userId',requireSignIn,isUserAuthenticated,getAllStatusReports)
 
 
 module.exports= router

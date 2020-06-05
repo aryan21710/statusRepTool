@@ -45,7 +45,9 @@ const postStatus = (req, res) => {
 };
 
 const getAllStatusReports = (req, res) => {
+    console.log("*************************************************");
   const userId = req.signedInUser._id;
+  console.log('req.body',req.body)
   console.log(`REQUEST TO GETALLSTATUS CAME FOR ${userId}`);
   StatusModel.find({ userIdForBackend: userId }).exec((err, reports) => {
     if (err || !reports) {

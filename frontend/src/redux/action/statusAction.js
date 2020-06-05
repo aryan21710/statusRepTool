@@ -14,11 +14,9 @@ import axios from "axios";
 export const postStatusAction = (reports) => {
   return async (dispatch) => {
     console.log("sending the axios post for ", reports);
-    // const token = JSON.parse(localStorage.getItem("jwt")).trim();
-    // const userId = JSON.parse(localStorage.getItem("signInInfo"))._id;
-    const userId = "5ed69dc12cbbd2f967f4ced6";
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWQ2OWRjMTJjYmJkMmY5NjdmNGNlZDYiLCJyb2xlIjowLCJpYXQiOjE1OTExNzE1ODF9.yAFMfNk6pCA-LctkYCxPVRwhPV4jCC2LaHxunWauAOQ";
+    const token = JSON.parse(localStorage.getItem("jwt")).trim();
+    const userId = JSON.parse(localStorage.getItem("signInInfo"))._id;
+    
 
     const reportsWithUserIdAppended = reports.data.map((report) => ({
       ...report,
@@ -54,11 +52,13 @@ export const postStatusAction = (reports) => {
   };
 };
 
-export const getAllStatusAction = (userId) => {
+export const getAllStatusAction = () => {
   return async (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("jwt")).trim();
+    const userId = JSON.parse(localStorage.getItem("signInInfo"))._id;
     console.log("axios get for ", userId);
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWQ2OWRjMTJjYmJkMmY5NjdmNGNlZDYiLCJyb2xlIjowLCJpYXQiOjE1OTExOTkwMTN9.CXjxyqwsU8AxAkPtOfoq71EZtx2K_vbv-QSeuVzmGrI";
+    console.log("axios get for ", token);
+
 
     dispatch({ type: GET_ALL_STATUS_REP_LOADING });
 
@@ -66,10 +66,7 @@ export const getAllStatusAction = (userId) => {
       const response = await axios.get(
         `${STATUS_URL}/getallstatus/${userId}`,
         {
-          userIdForBackend: userId,
-        },
-        {
-          headers: { ...dataHeaders},
+            headers: { ...dataHeaders, Authorization: `Bearer ${token}` },
         }
       );
       console.log("response back from server in GETALLSTATUSACTION", response);

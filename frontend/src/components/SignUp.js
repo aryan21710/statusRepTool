@@ -4,6 +4,8 @@ import LoginHeader from "./LoginHeader";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { signUpAction } from "../redux/action/LoginAction";
+import { signout } from "../api/userAuth";
+
 
 
 
@@ -27,7 +29,7 @@ const SignUp=()=>{
 
   useEffect(() => {
     nameInput.current.focus();
-
+    signout()
   }, []);
 
   useEffect(() => {
