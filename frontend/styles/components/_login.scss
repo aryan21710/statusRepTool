@@ -1,3 +1,21 @@
+.signInHeader,
+.signUpHeader {
+  position: absolute;
+  top: 0vh;
+  left: 19vw;
+  padding: 1vh 0vw;
+  font-size: 0.8vw;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  // border : 1px solid white
+
+}
+
+.signUpHeader {
+  left: 22.5vw;
+}
+
 .login {
   width: 100vw;
   height: 100vh;
@@ -34,33 +52,66 @@
   font-size: 1.2rem;
 }
 
-.uname {
+.email {
   position: absolute;
   top: 18vh;
 }
 
-.uname:focus,
+.name {
+  position: absolute;
+  top: 8vh;
+}
+
+
+
+.email:focus,
+.name:focus,
 .passwd:focus {
   background: rgba(42, 27, 61, 0.6);
 }
 
-.passwd {
-  position: absolute;
-  top: 28vh;
-}
 
-.loginBtn {
+
+
+
+.loginBtn, .loginBtnSignup{
   position: absolute;
   width: 50%;
   height: 5vh;
   left: 25%;
   text-decoration: none;
   outline: none;
+  font-size: 0.8vw;
   top: 38vh;
   border-radius: 20px;
   background: rgba(42, 27, 61, 0.6);
   color: white;
 }
+
+.nameSignup {
+  position: absolute;
+  top: 16vh;
+}
+.emailSignup {
+  position: absolute;
+  top: 25vh;
+}
+.passwd,.passwdSignup {
+  position: absolute;
+  top: 28vh;
+}
+
+.passwdSignup {
+  top: 34vh;
+
+}
+
+.loginBtnSignup {
+  top: 43vh;
+
+}
+
+
 
 .login form input::placeholder {
   color: white;
@@ -69,6 +120,16 @@
 }
 
 .login form p {
+  color: white;
+  font-size: 25px;
+  width: 24vw;
+  position: absolute;
+  top: 5vh;
+  left: 2vw;
+}
+
+
+.signUp form p {
   color: white;
   font-size: 25px;
   width: 24vw;
@@ -87,7 +148,7 @@
   z-index: 0;
 }
 
-.loginForm:hover .secondaryBkgLogin {
+.secondaryBkgLogin {
     animation: slideDown 2s 1 forwards ease-in-out;
     height: 100%;
 
@@ -124,7 +185,7 @@ hr {
   position: absolute;
   top: 12vh;
   left: 2vw;
-  width: 5vw;
+  width: 6vw;
   height: 1px;
   background: white;
 }

@@ -9,16 +9,17 @@ import { signUpAction,signInAction } from "../redux/action/LoginAction";
 import { saveJwtToLocalStorage } from "../api/userAuth";
 
 
-const SignIn=()=>{
+const SignUp=()=>{
   const history = useHistory();
   const dispatch = useDispatch();
 
+  const nameInput = useRef();
   const emailInput = useRef();
   const passwdInput = useRef();
   const submitInput = useRef();
 
   useEffect(() => {
-    emailInput.current.focus();
+    nameInput.current.focus();
   }, []);
 
   const [values, setValues] = useState({
@@ -27,6 +28,7 @@ const SignIn=()=>{
     serverError: "",
     success: false,
     signUpSuccess: false,
+    name: ""
   });
 
   const { password, email, serverError, success, signUpSuccess } = values;
@@ -105,11 +107,23 @@ const SignIn=()=>{
         <LoginHeader/>
 
           {email.length > 0 && <div className="secondaryBkgLogin"></div>}
-          <p>Login</p>
+          <p>Sign-Up</p>
           <hr />
 
           <input
-            className="email"
+          className="nameSignup"
+          ref=""
+          value={name || ""}
+          name="name"
+          onKeyDown={handleKeyDown}
+          onChange={handleChange}
+          type="name"
+          ref={nameInput}
+          placeholder="NAME"
+        />
+
+          <input
+            className="emailSignup"
             ref=""
             value={email || ""}
             name="email"
@@ -120,7 +134,7 @@ const SignIn=()=>{
             placeholder="EMAIL ADDRESS"
           />
           <input
-            className="passwd"
+            className="passwdSignup"
             value={password || ""}
             type="password"
             name="password"
@@ -131,12 +145,12 @@ const SignIn=()=>{
 
           />
           <button
-          className="loginBtn"
+          className="loginBtnSignup"
           ref={submitInput}
           onKeyDown={handleKeyDown}
           onClick={handleSubmit}
         >
-          Sign In
+          Sign Up
         </button>
         </form>
       </div>
@@ -144,4 +158,4 @@ const SignIn=()=>{
   
 }
 
-export default SignIn
+export default SignUp

@@ -1,9 +1,11 @@
 const path = require("path");
 const webpack = require("webpack");
 
-module.exports = () => {
+module.exports = (env) => {
+  const isProduction = env || undefined;
+  console.log("env and isProduction", env, ":", isProduction);
+
   return {
-    mode: "production",
     entry: ["babel-polyfill",path.join(__dirname, "frontend/src/app.js")],
     devServer: {
       contentBase: path.join(__dirname, "frontend/public", "dist"),
@@ -21,7 +23,7 @@ module.exports = () => {
     },
     output: {
       path: path.join(__dirname, "frontend/public", "build"),
-      publicPath: "/build",
+      publicPath: "/",
       filename: "bundle.js"
     },
 
