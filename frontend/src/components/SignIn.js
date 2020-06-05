@@ -31,13 +31,12 @@ const SignIn=()=>{
 
   const { password, email, serverError, success, signUpSuccess } = values;
 
-  // const signUpSuccessFromRedux = useSelector(
-  //   (state) => state.signUpReducer.success,
-  //   shallowEqual
-  // );
+  const signUpSuccessFromRedux = useSelector(
+    (state) => state.signUpReducer.success,
+    shallowEqual
+  );
 
 
-  const signUpSuccessFromRedux=true
 
   console.log("signUpSuccessFromRedux", signUpSuccessFromRedux);
   useEffect(() => {
@@ -138,7 +137,18 @@ const SignIn=()=>{
         >
           Sign In
         </button>
+        {serverError && (
+          <div className="signUperror flexStyling">{serverError}</div>
+        )}
+        {serverError
+          ? undefined
+          : signUpSuccess && (
+              <div className="signUpsuccess flexStyling">
+                SIGNUP SUCCESS. PLEASE SIGNIN NOW
+              </div>
+            )}
         </form>
+        
       </div>
     );
   

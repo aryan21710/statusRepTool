@@ -45,6 +45,8 @@ module.exports = (env) => {
         }
       ]
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [new webpack.HotModuleReplacementPlugin()],
+    devtool: isProduction ? "cheap-source-map" : "cheap-module-eval-source-map",
+
   };
 };

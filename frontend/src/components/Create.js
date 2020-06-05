@@ -24,4 +24,4 @@ const Create = () => {
   );
 };
 
-export default React.memo(Create);
+export default Create;
