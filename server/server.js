@@ -6,8 +6,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const expressValidator = require('express-validator');
-
 // Needed to source dotenv file configurations.
+require("dotenv").config();
 
 const app = express();
 const publicPath = path.join(__dirname, '..', 'frontend/public');
