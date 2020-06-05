@@ -7,7 +7,7 @@ import {
   GET_ALL_STATUS_REP_FAILURE,
 } from "../../../common/constants";
 
-import { STATUS_URL } from "../../../mydotenv";
+import { STATUS_URL } from "../../../common/mydotenv";
 import { dataHeaders } from "../../../common/axiosHeaders";
 import axios from "axios";
 

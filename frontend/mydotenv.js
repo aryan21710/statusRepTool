@@ -1,1 +1,0 @@
-export const STATUS_URL="http://localhost:8002/status"
