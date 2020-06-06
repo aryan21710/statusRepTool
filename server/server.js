@@ -34,10 +34,10 @@ app.use(expressValidator());
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '..','/frontend/build')))
   //
-  app.get('*', (req, res) => {
-    console.log('REQUEST INSIDE * ENDPOINT')
-    res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
-  })
+  // app.get('*', (req, res) => {
+  //   console.log('REQUEST INSIDE * ENDPOINT')
+  //   res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
+  // })
 }
 
 console.log('PUBLICPATH:-' + publicPath);
