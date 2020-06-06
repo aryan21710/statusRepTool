@@ -42,7 +42,7 @@ const statusRoutes = require("./Routes/statusReport.js");
 
 // Connect to the MONGOOSE DB
 mongoose
-  .connect(process.env.DATABASE || "mongodb://localhost/statusReportingTool", {
+  .connect(process.env.MONGODB_URI , {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true 
