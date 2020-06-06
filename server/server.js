@@ -31,22 +31,27 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use(expressValidator());
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '..','/frontend/build')))
-  //
-  // app.get('*', (req, res) => {
-  //   console.log('REQUEST INSIDE * ENDPOINT')
-  //   res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
-  // })
-}
 
-console.log('PUBLICPATH:-' + publicPath);
 
 // IMPORT ROUTES
 const authRoutes = require("./Routes/auth.js");
 const statusRoutes = require("./Routes/statusReport.js");
 app.use('/userauth',authRoutes)
 app.use('/status',statusRoutes)
+
+
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '..','/frontend/build')))
+  //
+  app.get('*', (req, res) => {
+    console.log('REQUEST INSIDE * ENDPOINT')
+    res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
+  })
+}
+
+console.log('PUBLICPATH:-' + publicPath);
+
+
 
 //config DB..
 const db = require('../config/keys.js').mongoURI;
