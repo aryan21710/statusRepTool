@@ -32,10 +32,10 @@ app.use(cors());
 
 app.use(expressValidator());
 if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')))
+  app.use(express.static(path.join(__dirname, '..','/frontend/build')))
   //
   app.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname + '../frontend/build/index.html'))
+    res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
   })
 }
 
@@ -44,6 +44,8 @@ console.log('PUBLICPATH:-' + publicPath);
 // IMPORT ROUTES
 const authRoutes = require("./Routes/auth.js");
 const statusRoutes = require("./Routes/statusReport.js");
+app.use('/userauth',authRoutes)
+app.use('/status',statusRoutes)
 
 //config DB..
 const db = require('../config/keys.js').mongoURI;
@@ -60,13 +62,10 @@ mongoose
   });
 
 
-app.use('/userauth',authRoutes)
-app.use('/status',statusRoutes)
 
 
-app.get('*', (req, res) => {
-  res.sendfile(path.join(__dirname , '..','frontend/build/index.html'))
-});
+
+
 
 app.get('/', (req, res) => {
   res.send('Root route of server');

@@ -6,8 +6,6 @@ const {
   signUp,
   signIn,
   signOut,
-  requireSignIn,
-  isUserAuthenticated,
 } = require("../Controllers/auth.js");
 const { check } = require("express-validator/check");
 

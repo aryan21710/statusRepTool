@@ -86,6 +86,7 @@ const userById = (req, res, next, id) => {
 };
 
 const signOut = (req, res) => {
+  console.log("*************************************************");
     res.clearCookie("SignInToken");
     res.json({
       message: "USER SIGNED OUT SUCCESSFULLY",
