@@ -42,7 +42,6 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
-    "live-server": "^1.2.1",
     "moment": "^2.26.0",
     "mongoose": "^5.9.17",
     "morgan": "^1.10.0",
@@ -50,11 +49,9 @@
     "normalize.css": "^8.0.1",
     "react": "^16.12.0",
     "react-addons-shallow-compare": "^15.6.2",
-    "react-base-table": "^1.9.3",
     "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
-    "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-table": "^6.11.5",
@@ -71,7 +68,6 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "jsdoc": "^3.6.4",
     "nodemon": "^2.0.4"
   },
   "engines": {

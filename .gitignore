@@ -3,3 +3,4 @@ bundle.js
 frontend/public/build/bundle.js
 bundle.js.map
 *.hot-update.*
+.env
