@@ -10,7 +10,7 @@ const expressValidator = require('express-validator');
 require("dotenv").config();
 
 const app = express();
-const publicPath = path.join(__dirname, '..', 'frontend/public');
+const publicPath = path.join(__dirname);
 const port = process.env.PORT || 5000;
 // IMPORT ALL MIDDLEWARES
 
@@ -31,11 +31,12 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use(expressValidator());
-if(process.env.NODE_ENV === 'production') { 
-   app.use(express.static(path.join(__dirname, '..', 'frontend/public')));
-} else {
-  app.use(express.static(publicPath));
-
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')))
+  //
+  app.get('*', (req, res) => {
+    res.sendfile(path.join(__dirname + '../frontend/build/index.html'))
+  })
 }
 
 console.log('PUBLICPATH:-' + publicPath);
@@ -64,7 +65,11 @@ app.use('/status',statusRoutes)
 
 
 app.get('*', (req, res) => {
-	res.sendFile(path.join(publicPath, '/index.html'));
+  res.sendfile(path.join(__dirname , '..','frontend/build/index.html'))
+});
+
+app.get('/', (req, res) => {
+  res.send('Root route of server');
 });
 
 
