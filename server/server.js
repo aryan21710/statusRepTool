@@ -10,7 +10,7 @@ const expressValidator = require('express-validator');
 require("dotenv").config();
 
 const app = express();
-const publicPath = path.join(__dirname, '..', 'frontend/src/public');
+const publicPath = path.join(__dirname, '..', 'frontend/public');
 const port = process.env.PORT || 5000;
 // IMPORT ALL MIDDLEWARES
 
@@ -32,7 +32,7 @@ app.use(cors());
 
 app.use(expressValidator());
 if(process.env.NODE_ENV === 'production') { 
-   app.use(express.static(path.join(__dirname, '..', 'frontend/src/public')));
+   app.use(express.static(path.join(__dirname, '..', 'frontend/public')));
 } else {
   app.use(express.static(publicPath));
 

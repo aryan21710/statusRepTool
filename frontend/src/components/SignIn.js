@@ -19,8 +19,6 @@ const SignIn=()=>{
   useEffect(() => {
     emailInput.current.focus();
     signout()
-        // eslint-disable-next-line
-
   }, []);
 
   const [values, setValues] = useState({
@@ -49,6 +47,7 @@ const SignIn=()=>{
   }, [success]);
 
   useEffect(() => {
+    console.log('useeffect is called',signUpSuccess)
     if (signUpSuccessFromRedux) {
       setTimeout(() => {
         dispatch(signUpAction({ email, success: false }));
@@ -64,6 +63,9 @@ const SignIn=()=>{
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('before dispatch',values)
+    const {email,password}=values
+    console.log('email,password',email,password)
     const data=await dispatch(signInAction({ email, password }))
     console.log('data back from axios post  for signInAction',data)
 
@@ -84,6 +86,7 @@ const SignIn=()=>{
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log('name and value',name,':',value)
     setValues({
       ...values,
       [name]: value,
@@ -113,7 +116,7 @@ const SignIn=()=>{
 
           <input
             className="email"
-            value={email || ""}
+            value={email}
             name="email"
             onKeyDown={handleKeyDown}
             onChange={handleChange}
@@ -123,7 +126,7 @@ const SignIn=()=>{
           />
           <input
             className="passwd"
-            value={password || ""}
+            value={password}
             type="password"
             name="password"
             onKeyDown={handleKeyDown}

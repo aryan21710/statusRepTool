@@ -88,7 +88,7 @@ button {
 .DateInput_input,
 .btn1,
 .DateInput, .DateInput_1 {
-    background: $navlink;
+    background: rgba(250, 20, 10, 0.7);
     line-height: 1rem;
     font-size: 2rem;
     padding:0;
@@ -265,7 +265,6 @@ table,th,td {
     width: 47.5vw;
     text-decoration: none;
     text-align: center;
-    background: $navlink;
     border-top-right-radius: 50px;
     letter-spacing: 1px;
     transition: all 280ms ease-in;
@@ -279,10 +278,14 @@ table,th,td {
   
   .addBtn {
     left: 0vw;
+    background: rgba(250, 20, 10, 0.7);
+
   }
   
   .viewBtn {
     left:47.5vw;
+    background: rgba(7, 116, 241, 0.9)
+
   }
   
   
@@ -475,7 +478,7 @@ table,th,td {
   top: 0vh;
   left: 0vw;
   width: 27vw;
-  background : $secondaryLoginBkg;
+  background : rgba(250, 20, 10, 0.4);
   border-radius: 20px;
   z-index: 0;
 }
@@ -598,7 +601,7 @@ hr {
   .DateInput_input,
   .options,
   .addReportBtn {
-    background: $navlink;
+    background: rgba(250, 20, 10, 0.7);
   }
   
   .DateInput_input {
@@ -617,7 +620,7 @@ hr {
   }
   
   .submitReportBtn button {
-    background: $navlink;
+    background: rgba(250, 20, 10, 0.7);
     font-size: 2rem;
     cursor: pointer;
     color: black;

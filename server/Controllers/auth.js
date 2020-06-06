@@ -32,6 +32,7 @@ const signUp = (req, res, next) => {
   
   const signIn = (req, res, next) => {
     const { email, password } = req.body;
+    console.log('req.body',req.body)
     if (email.length == 0) {
       return res.status(401).json({
         error: "PLEASE ENTER EMAIL ADDRESS",
