@@ -48,7 +48,7 @@ mongoose
     useUnifiedTopology: true 
   })
   .then(() => {
-    console.log("CONNECTED TO DATABASE");
+    console.log(`CONNECTED TO DATABASE WITH ENV ${process.env.MONGODB_URI}` );
   });
 
 
