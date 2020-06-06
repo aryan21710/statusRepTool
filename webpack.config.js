@@ -1,9 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
+const ExtractTextPlugin= require("extract-text-webpack-plugin")
 
 module.exports = (env) => {
-  const isProduction = env || undefined;
+  const isProduction = env === "production";
   console.log("env and isProduction", env, ":", isProduction);
+
+  const CSSExtract= new ExtractTextPlugin('webpackExtractedStyles.css')
 
   return {
     entry: ["babel-polyfill",path.join(__dirname, "frontend/src/app.js")],
@@ -37,7 +40,19 @@ module.exports = (env) => {
         },
         {
           test: /\.s?css$/,
-          use: ["style-loader", "css-loader", "sass-loader"]
+          use: CSSExtract.extract({
+            use: [{
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },{
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            }]
+          })
         },
         {
           test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg|jpg)(\?[a-z0-9=.]+)?$/,
@@ -45,8 +60,8 @@ module.exports = (env) => {
         }
       ]
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
-    devtool: isProduction ? "cheap-source-map" : "cheap-module-eval-source-map",
+    plugins: [new webpack.HotModuleReplacementPlugin(), CSSExtract],
+    devtool: isProduction ? "cheap-source-map" : "inline-source-map",
 
   };
 };
