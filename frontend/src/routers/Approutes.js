@@ -4,21 +4,19 @@ import Create from "../components/Create";
 import View from "../components/View";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
-import PagenotFound from "../../src/components/PagenotFound";
-import backgroundImg from "../../public/images/office.png";
+import backgroundImg from "../images/office.png";
 
 const Approutes = () => {
   return (
     <BrowserRouter>
       <div>
-        <img src={backgroundImg} className="commonBackground" />
+        <img src={backgroundImg} className="commonBackground" alt="background"/>
 
         <Switch>
           <Route path="/" component={SignIn} exact={true} />
           <Route path="/create" component={Create} />
           <Route path="/signup" component={SignUp} />
           <Route path="/view" component={View} />
-          <Route component={PagenotFound} />
         </Switch>
       </div>
     </BrowserRouter>

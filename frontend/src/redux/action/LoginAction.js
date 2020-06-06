@@ -5,9 +5,9 @@ import {
 	SIGNIN_SUCCESS,
 	SIGNIN_LOADING,
 	SIGNIN_FAILED,
-  } from "../../../common/constants";
-  import {  LOGIN_URL } from "../../../common/mydotenv";
-  import { dataHeaders } from "../../../common/axiosHeaders";
+  } from "../../common/constants";
+  import {  LOGIN_URL } from "../../common/mydotenv";
+  import { dataHeaders } from "../../common/axiosHeaders";
   import axios from "axios";
   
   export const signUpAction = (user) => {
@@ -29,7 +29,7 @@ import {
 		);
 		console.log("response inside signupaction", response);
 		if (
-		  response.status == 200 &&
+		  response.status === 200 &&
 		  Object.keys(response.data).includes("user")
 		) {
 		  dispatch({ type: SIGNUP_SUCCESS, data: response.data.user.email });
@@ -63,7 +63,7 @@ import {
 		);
 		console.log("response inside siginInAction", response);
 		if (
-		  response.status == 200 &&
+		  response.status === 200 &&
 		  Object.keys(response.data).includes("token") && Object.keys(response.data).includes("userCred")
 		) {
 		  dispatch({ type: SIGNIN_SUCCESS, data: response.data });

@@ -11,12 +11,13 @@ const View = () => {
 
   useEffect(() => {
     dispatch(getAllStatusAction());
+    // eslint-disable-next-line
 }, []);
 
-  const loading = useSelector(
-    (state) => state.statusReducer.loading,
-    shallowEqual
-  );
+  // const loading = useSelector(
+  //   (state) => state.statusReducer.loading,
+  //   shallowEqual
+  // );
 
   const data = useSelector((state) => state.statusReducer.data, shallowEqual);
 

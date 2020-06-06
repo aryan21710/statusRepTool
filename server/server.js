@@ -10,8 +10,8 @@ const expressValidator = require('express-validator');
 require("dotenv").config();
 
 const app = express();
-const publicPath = path.join(__dirname, '..', 'frontend/public');
-const port = process.env.PORT || 8002;
+const publicPath = path.join(__dirname, '..', 'frontend/src/public');
+const port = process.env.PORT || 5000;
 // IMPORT ALL MIDDLEWARES
 
 // BODYPARSER is needed to get access to post data. It will give access to request.body and convert it into JSON object.
@@ -32,7 +32,7 @@ app.use(cors());
 
 app.use(expressValidator());
 if(process.env.NODE_ENV === 'production') { 
-   app.use(express.static(path.join(__dirname, '..', 'frontend/public/build')));
+   app.use(express.static(path.join(__dirname, '..', 'frontend/src/public')));
 } else {
   app.use(express.static(publicPath));
 
@@ -44,16 +44,18 @@ console.log('PUBLICPATH:-' + publicPath);
 const authRoutes = require("./Routes/auth.js");
 const statusRoutes = require("./Routes/statusReport.js");
 
+//config DB..
+const db = require('../config/keys.js').mongoURI;
 
 // Connect to the MONGOOSE DB
 mongoose
-  .connect(process.env.MONGODB_URI , {
+  .connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true 
   })
   .then(() => {
-    console.log(`CONNECTED TO DATABASE WITH ENV ${process.env.MONGODB_URI}` );
+    console.log(`CONNECTED TO DATABASE WITH ENV ${db}` );
   });
 
 
@@ -62,8 +64,11 @@ app.use('/status',statusRoutes)
 
 
 app.get('*', (req, res) => {
-	res.sendFile(path.join(publicPath, 'dist/index.html'));
+	res.sendFile(path.join(publicPath, '/index.html'));
 });
+
+
+
 
 app.listen(port, () => {
 	console.log('SERVER LISTENING ON:-' + port);

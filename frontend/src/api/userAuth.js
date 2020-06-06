@@ -1,4 +1,4 @@
-import { LOGIN_URL } from "../../common/mydotenv";
+import { LOGIN_URL } from "../common/mydotenv";
 
 
 

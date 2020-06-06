@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import PropTypes from "prop-types";
 import LoginHeader from "./LoginHeader";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -30,12 +29,14 @@ const SignUp=()=>{
   useEffect(() => {
     nameInput.current.focus();
     signout()
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     if (success) {
       history.push("/");
     }
+    // eslint-disable-next-line
   }, [success]);
 
   const handleSubmit = async (event) => {
@@ -68,11 +69,11 @@ const SignUp=()=>{
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      if (e.target.name == "name") {
+      if (e.target.name === "name") {
         emailInput.current.focus();
-      } else if (e.target.name == "email") {
+      } else if (e.target.name === "email") {
         passwdInput.current.focus();
-      } else if (e.target.name == "email") {
+      } else if (e.target.name === "email") {
         submitInput.current.focus();
       }
     }
@@ -83,7 +84,7 @@ const SignUp=()=>{
         <form onSubmit={handleSubmit} className="loginForm">
         <LoginHeader/>
 
-          {name.length==1 && <div className="secondaryBkgLogin"></div>}
+          {name.length===1 && <div className="secondaryBkgLogin"></div>}
           <p>Sign-Up</p>
           <hr />
 

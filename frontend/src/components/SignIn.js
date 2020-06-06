@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import PropTypes from "prop-types";
 import LoginHeader from "./LoginHeader";
 import { useHistory } from "react-router-dom";
 import { shallowEqual, useSelector } from "react-redux";
@@ -20,6 +19,8 @@ const SignIn=()=>{
   useEffect(() => {
     emailInput.current.focus();
     signout()
+        // eslint-disable-next-line
+
   }, []);
 
   const [values, setValues] = useState({
@@ -44,6 +45,7 @@ const SignIn=()=>{
     if (success) {
       history.push("/view");
     }
+    // eslint-disable-next-line
   }, [success]);
 
   useEffect(() => {
@@ -56,6 +58,7 @@ const SignIn=()=>{
       ...values,
       signUpSuccess: signUpSuccessFromRedux,
     });
+        // eslint-disable-next-line
   }, [signUpSuccess]);
 
 
@@ -91,9 +94,9 @@ const SignIn=()=>{
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      if (e.target.name == "email") {
+      if (e.target.name === "email") {
         passwdInput.current.focus();
-      } else if (e.target.name == "password") {
+      } else if (e.target.name === "password") {
         submitInput.current.focus();
       }
     }
@@ -110,7 +113,6 @@ const SignIn=()=>{
 
           <input
             className="email"
-            ref=""
             value={email || ""}
             name="email"
             onKeyDown={handleKeyDown}

@@ -5,10 +5,10 @@ import {
   GET_ALL_STATUS_REP_SUCCESS,
   GET_ALL_STATUS_REP_LOADING,
   GET_ALL_STATUS_REP_FAILURE,
-} from "../../../common/constants";
+} from "../../common/constants";
 
-import { STATUS_URL } from "../../../common/mydotenv";
-import { dataHeaders } from "../../../common/axiosHeaders";
+import { STATUS_URL } from "../../common/mydotenv";
+import { dataHeaders } from "../../common/axiosHeaders";
 import axios from "axios";
 
 export const postStatusAction = (reports) => {

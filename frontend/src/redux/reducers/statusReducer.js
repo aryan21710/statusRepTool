@@ -5,7 +5,7 @@ import {
   GET_ALL_STATUS_REP_SUCCESS,
   GET_ALL_STATUS_REP_LOADING,
   GET_ALL_STATUS_REP_FAILURE,
-} from "../../../common/constants";
+} from "../../common/constants";
 
 const initialState = {
     loading: false,

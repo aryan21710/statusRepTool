@@ -1,0 +1,822 @@
+
+
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow: hidden;
+}
+
+body {
+    font-family : Arial, Helvetica, sans-serif;
+    color: black;
+    margin: 0;
+    padding : 0;
+    
+}
+
+.flexStyling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.commonBackground {
+      width: 100vw;
+      height: 100vh;
+}
+
+button {
+    background: #99d6ff;
+    color : black;
+}
+
+:root {
+    --w: 1000px;
+    --h: 20vh;
+    
+}
+* {
+    box-sizing: border-box;
+}
+/* width:var(--w) not working under .create and .myform*/
+.main {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    position: absolute;
+    top: 18.1vh;
+    left: 3vw;
+}
+
+.create {
+    width: 90vw;
+    height: 75vh;
+    color: black;
+
+}
+
+.myForm {
+    display: grid;
+    grid-template-rows: 13vh 53vh;
+    grid-gap: 3vh;
+    grid-template-columns: 1fr;
+}
+
+.addRepDiv {
+    display: grid;  
+    grid-template-columns: minmax(auto,10vw) minmax(auto,10vw) minmax(auto,59vw) minmax(auto,3vw);
+    align-items: center;
+    grid-gap: 1vw;
+    width: 100%;
+    padding: 0px 20px;
+
+
+}
+
+.submitRepDiv {
+    display: grid;
+    grid-template-rows: 48vh 5vh;
+    justify-content: center;
+    grid-row-gap: 3vh;
+
+}
+
+
+.options,
+.DateInput_input,
+.btn1,
+.DateInput, .DateInput_1 {
+    background: $navlink;
+    line-height: 1rem;
+    font-size: 2rem;
+    padding:0;
+    cursor: pointer;
+    color: black;
+    height: calc(var(--h)/4);
+    
+}
+
+.textarea1:focus, .textarea1:focus {
+    background: #cccccc;
+}
+
+.btn2 {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+     
+
+} 
+
+.btn2 button {
+   background:  #99c9ff67;
+   font-size: 2rem;
+   cursor: pointer;
+   color: black;
+ 
+}
+
+
+.textarea1 {
+    font-size: 2rem;
+    text-align: left;
+    height: calc(var(--h)/4);
+}
+
+.textarea2 {
+    font-size: 2rem;
+    text-align: left;
+   width: 80vw;
+
+}
+
+table,th,td {
+    border: 1px solid black;
+      border-collapse: collapse;
+}
+
+::placeholder {
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:600px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .myForm {
+        display:grid;
+        grid-gap: 2.5vh;
+    }
+    .addRepDiv {
+        margin: 10px 0px 0px 0px;
+        display: grid;
+        grid-column-gap: 5px;
+        grid-template-areas: 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding: 0px 5px;
+    }
+
+    .options {
+        grid-column-start: 4;
+        grid-column-end: 6;
+        height: 40px;
+
+    }
+.DateInput_input {
+    grid-column-start: 1;
+    grid-column-end: 3;
+        height: 40px;
+
+
+}
+.textarea1 {
+    grid-column-start: 1;
+    grid-column-end:5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.btn1 {
+ grid-column-start: 5;
+    grid-column-end:7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+    .btn2 {
+    width: 40vw;
+    margin-left: 20vw;
+     
+
+}
+
+.submitRepDiv {
+    margin: 10px;
+    display: grid;
+    grid-template-rows: 45vh 5vh;
+    justify-content: center;
+    grid-row-gap: 3vh;
+
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.DateInput_input,.DateInput_1,.DateInput,
+.options,::placeholder,.textarea2,.textarea1,.btn2 button {
+    font-size: 1.5rem
+}
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0vh;
+    left: 3vw;
+    z-index: 1000;
+    height: 18vh;
+  
+  
+  }
+  .appTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  
+  h1 {
+    padding: 1vh 2vw;
+    color: black;
+    font-size: 3rem;
+    text-shadow: 2px 2px pink;
+  }
+  
+  .navLinks {
+    margin-top: 3vh;
+    width: 96vw;
+    position: relative;
+    height: 8vh;
+  
+  
+  
+  }
+  
+  .navLinks a {
+    float: left;
+  
+  }
+  
+  .addBtn,
+  .viewBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    font-size: 1.5rem;
+    height: 6vh;
+    width: 47.5vw;
+    text-decoration: none;
+    text-align: center;
+    background: $navlink;
+    border-top-right-radius: 50px;
+    letter-spacing: 1px;
+    transition: all 280ms ease-in;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+   bottom: 0vh;
+  
+  }
+  
+  .addBtn {
+    left: 0vw;
+  }
+  
+  .viewBtn {
+    left:47.5vw;
+  }
+  
+  
+  
+  
+  .activeButton {
+    background: lighten(rgba(7, 116, 241, 0.9), 10%);
+    letter-spacing: 1.5px;
+    font-size: 2rem;
+    transition: all 280ms ease-out;
+    color: white;
+    height: 8vh;
+   
+  }
+  
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+      padding: 0;
+    }
+  
+    a.is-active button,
+    a button {
+      font-size: 1.5rem;
+      width: 20vw;
+      height: 5vh;
+      padding-bottom: 10px;
+    }
+  
+    img {
+      width: 50px;
+      height: 30px;
+    }
+  }
+
+  .signInHeader,
+.signUpHeader {
+  position: absolute;
+  top: 0vh;
+  left: 19vw;
+  padding: 1vh 0vw;
+  font-size: 0.8vw;
+  text-decoration: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+  opacity: 1;
+
+}
+
+.signUpHeader {
+  left: 22.5vw;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+}
+
+.loginForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 25vh;
+  left: 38vw;
+  width: 27vw;
+  height: 54vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 0;
+  border-radius: 20px;
+}
+
+.login form input {
+  margin: 0 auto;
+  width: 24vw;
+  height: 6vh;
+  border-radius: 20px;
+  outline: none;
+  background: rgba(42, 27, 61, 0.6);
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid white;
+}
+
+.email {
+  position: absolute;
+  top: 18vh;
+}
+
+.name {
+  position: absolute;
+  top: 8vh;
+}
+
+
+
+.email:focus,
+.name:focus,
+.passwd:focus {
+  background: rgba(42, 27, 61, 0.6);
+}
+
+
+
+
+
+.loginBtn, .loginBtnSignup{
+  position: absolute;
+  width: 50%;
+  height: 5vh;
+  left: 25%;
+  text-decoration: none;
+  outline: none;
+  font-size: 0.8vw;
+  top: 38vh;
+  border-radius: 20px;
+  background: rgba(42, 27, 61, 0.6);
+  color: white;
+  border: 1px solid white;
+
+}
+
+.nameSignup {
+  position: absolute;
+  top: 16vh;
+  border: 1px solid white;
+
+}
+.emailSignup {
+  position: absolute;
+  top: 25vh;
+  border: 1px solid white;
+
+}
+.passwd,.passwdSignup {
+  position: absolute;
+  top: 28vh;
+  border: 1px solid white;
+
+}
+
+.passwdSignup {
+  top: 34vh;
+
+}
+
+.loginBtnSignup {
+  top: 43vh;
+
+}
+
+
+
+.login form input::placeholder {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.login form p {
+  color: white;
+  font-size: 25px;
+  width: 24vw;
+  position: absolute;
+  top: 5vh;
+  left: 2vw;
+}
+
+
+.signUp form p {
+  color: white;
+  font-size: 25px;
+  width: 24vw;
+  position: absolute;
+  top: 5vh;
+  left: 2vw;
+}
+
+.secondaryBkgLogin {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  width: 27vw;
+  background : $secondaryLoginBkg;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.secondaryBkgLogin {
+    animation: slideDown 2s 1 forwards ease-in-out;
+    height: 100%;
+
+}
+
+.loginForm:hover > hr {
+    animation: hrAnimate 2s 1 1s forwards ease-in-out;
+}
+
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  to {
+    background: rgba(0, 0, 0,0.7);
+    height: 54vh;
+  }
+}
+
+@keyframes hrAnimate {
+    from {
+      width: 5vw;
+    }
+  
+    to {
+      width: 22vw;
+    }
+  }
+
+hr {
+  position: absolute;
+  top: 12vh;
+  left: 2vw;
+  width: 6vw;
+  height: 1px;
+  background: white;
+}
+
+
+.signUperror {
+  position: absolute;
+  bottom: 1vh;
+  font-size: 1vw;
+  color: red;
+  width: 25vw;
+}
+
+.signUpsuccess {
+  position: absolute;
+  bottom: 1vh;
+  font-size: 1vw;
+  width: 25vw;
+  color: red;
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    position: absolute;
+    top: 18.5vh;
+    left: 3vw;
+  }
+  
+  .create {
+    width: 95vw;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.75);
+    color: black;
+  }
+  
+  .myForm {
+    display: grid;
+    grid-template-rows: 13vh 53vh;
+    grid-gap: 3vh;
+    grid-template-columns: 1fr;
+  }
+  
+  .addRepDiv {
+    display: grid;
+    grid-template-columns:
+      minmax(auto, 10vw) minmax(auto, 10vw) minmax(auto, 67vw)
+      minmax(auto, 3vw);
+    align-items: center;
+    grid-gap: 1vw;
+    width: 100%;
+    padding: 0px 20px;
+  }
+  
+  .submitRepDiv {
+    display: grid;
+    grid-template-rows: 48vh 5vh;
+    justify-content: center;
+    grid-row-gap: 3vh;
+  }
+  
+  .options,
+  .DateInput_input,
+  .addReportBtn,
+  .DateInput,
+  .DateInput_1 {
+    background: white;
+    line-height: 1rem;
+    font-size: 2rem;
+    padding: 0;
+    cursor: pointer;
+    color: black;
+    height: calc(var(--h) / 4);
+  }
+  
+  .DateInput_input,
+  .options,
+  .addReportBtn {
+    background: $navlink;
+  }
+  
+  .DateInput_input {
+    text-align: center;
+  }
+  
+  .textarea1:focus,
+  .textarea1:focus {
+    background: #cccccc;
+  }
+  
+  .submitReportBtn {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .submitReportBtn button {
+    background: $navlink;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .textarea1 {
+    font-size: 2rem;
+    text-align: left;
+    height: calc(var(--h) / 4);
+    line-height: normal;
+    line-height: calc(var(--h) / 4);
+  }
+  
+  .textarea2 {
+    font-size: 2rem;
+    text-align: left;
+    width: 80vw;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  ::placeholder {
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .addReportBtn:hover,
+  .submitReportBtn button:hover {
+    background: lighten(rgba(205, 20, 20, 1), 10%);
+    letter-spacing: 1.5px;
+    font-size: 2.5rem;
+    transition: all 280ms ease-in;
+    color: white;
+  }
+  
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 1.5rem;
+    }
+    .myForm {
+      display: grid;
+      grid-gap: 2.5vh;
+    }
+    .addRepDiv {
+      margin: 10px 0px 0px 0px;
+      display: grid;
+      grid-column-gap: 5px;
+      grid-template-areas: 1fr 1fr 1fr 1fr 1fr 1fr;
+      padding: 0px 5px;
+    }
+    .options {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      height: 40px;
+    }
+    .DateInput_input {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      height: 40px;
+    }
+    .textarea1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .addReportBtn {
+      grid-column-start: 5;
+      grid-column-end: 7;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+   
+    .submitReportBtn {
+      width: 40vw;
+      margin-left: 20vw;
+    }
+    .submitRepDiv {
+      margin: 10px;
+      display: grid;
+      grid-template-rows: 45vh 5vh;
+      justify-content: center;
+      grid-row-gap: 3vh;
+    }
+    ::placeholder {
+      text-align: center;
+    }
+    .DateInput_input,
+    .DateInput_1,
+    .DateInput,
+    .options,
+    ::placeholder,
+    .textarea2,
+    .textarea1,
+    .submitReportBtn button {
+      font-size: 1.5rem;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    font-weight: 900;
+  }
+  /* width:var(--w) not working under .create and .myform*/
+  .mainView {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .createView {
+    width: 95vw;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0px 20px;
+    color: black;
+    position: absolute;
+    top: 18.1vh;
+    left: 3vw;
+  
+  }
+  
+  .myformView {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  
+  .myformView input[type="text"] {
+    color: black;
+    text-align: center;
+    height: 40px;
+    background: #99c9ff67;
+    line-height: 10px;
+    font-size: 2rem;
+    padding: 0;
+    cursor: pointer;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .textAreaView {
+    margin: 0vh 0vh 3vh 0vh;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    height: 72vh;
+    text-align: left;
+    overflow: auto;
+  }
+  
+  input::placeholder {
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #3333ff;
+  }
+  
+  .myformView input[type="text"]:focus {
+    background: #cccccc;
+  }
+  
+  .rt-td:last-child {
+    overflow: auto;
+    text-overflow: initial;
+  }
+  
+  @media screen and (max-width: 600px) {
+    input[type="text"],
+    input::placeholder,
+    .textAreaView,
+    .rt-td,
+    .ReactTable .rt-thead .rt-resizable-header-content {
+      font-size: 1.5rem;
+    }
+    .rt-td:last-child {
+      overflow: auto;
+      text-overflow: initial;
+    }
+    .ReactTable .-pagination .-center {
+      flex: auto;
+    }
+  }
+  
+  
+  
+
+
+
+
+

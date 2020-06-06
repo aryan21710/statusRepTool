@@ -4,7 +4,7 @@ import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import moment from "moment";
 import ReactTable from "react-table";
-import "../../styles/react-table.css";
+import "../styles/react-table.css";
 
 /**
  * StatusForm Component:- Form which includes Inputs to Enter your Status report
@@ -33,7 +33,7 @@ class StatusForm extends React.Component {
   };
 
   handleSubmit = () => {
-    if (this.state.data.length == 0) {
+    if (this.state.data.length === 0) {
       alert("PLEASE ENTER WORK DONE AND CLICK ON + BEFORE SUBMIT");
     } else {
       this.setState({
@@ -98,7 +98,7 @@ class StatusForm extends React.Component {
               <select
                 className="options"
                 onChange={e => {
-                  if (e.target.value != "Category") {
+                  if (e.target.value !== "Category") {
                     this.setState({
                       category: e.target.value
                     });
@@ -135,7 +135,7 @@ class StatusForm extends React.Component {
               <button
                 className="addReportBtn"
                 onClick={e => {
-                  if (this.state.text.length > 0 && this.state.text != "") {
+                  if (this.state.text.length > 0 && this.state.text !== "") {
                     console.log("ADD REPORT NOW");
                     this.setState({
                       categoryCnt: this.state.categoryCnt + 1
