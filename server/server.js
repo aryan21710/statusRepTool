@@ -31,7 +31,12 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use(expressValidator());
-app.use(express.static(publicPath));
+if(process.env.NODE_ENV === 'production') { 
+   app.use(express.static(path.join(__dirname, '..', 'frontend/public/build')));
+} else {
+  app.use(express.static(publicPath));
+
+}
 
 console.log('PUBLICPATH:-' + publicPath);
 
