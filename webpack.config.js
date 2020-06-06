@@ -26,7 +26,7 @@ module.exports = (env) => {
     },
     output: {
       path: path.join(__dirname, "frontend/public", "build"),
-      publicPath: "/",
+      publicPath: "/build",
       filename: "bundle.js"
     },
 
