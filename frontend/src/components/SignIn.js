@@ -63,7 +63,7 @@ const SignIn=()=>{
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('before dispatch',values)
+    // console.log('before dispatch',values)
     const {email,password}=values
     console.log('email,password',email,password)
     const data=await dispatch(signInAction({ email, password }))
@@ -86,7 +86,7 @@ const SignIn=()=>{
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log('name and value',name,':',value)
+    // console.log('name and value',name,':',value)
     setValues({
       ...values,
       [name]: value,
