@@ -35,6 +35,7 @@ if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '..','/frontend/build')))
   //
   app.get('*', (req, res) => {
+    console.log('REQUEST INSIDE * ENDPOINT')
     res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
   })
 }
@@ -67,9 +68,9 @@ mongoose
 
 
 
-app.get('/', (req, res) => {
-  res.send('Root route of server');
-});
+// app.get('/', (req, res) => {
+//   res.send('Root route of server');
+// });
 
 
 
