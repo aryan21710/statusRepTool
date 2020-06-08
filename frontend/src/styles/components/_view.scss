@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    font-weight: 900;
+  }
+  /* width:var(--w) not working under .create and .myform*/
+  .mainView {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .createView {
+    width: 95vw;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0px 20px;
+    color: black;
+    position: absolute;
+    top: 18.1vh;
+    left: 3vw;
+  
+  }
+  
+  .myformView {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  
+  .myformView input[type="text"] {
+    color: black;
+    text-align: center;
+    height: 40px;
+    background: #99c9ff67;
+    line-height: 10px;
+    font-size: 2rem;
+    padding: 0;
+    cursor: pointer;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .textAreaView {
+    margin: 0vh 0vh 3vh 0vh;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    height: 72vh;
+    text-align: left;
+    overflow: auto;
+  }
+  
+  input::placeholder {
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #3333ff;
+  }
+  
+  .myformView input[type="text"]:focus {
+    background: #cccccc;
+  }
+  
+  .rt-td:last-child {
+    overflow: auto;
+    text-overflow: initial;
+  }
+  
+  @media screen and (max-width: 600px) {
+    input[type="text"],
+    input::placeholder,
+    .textAreaView,
+    .rt-td,
+    .ReactTable .rt-thead .rt-resizable-header-content {
+      font-size: 1.5rem;
+    }
+    .rt-td:last-child {
+      overflow: auto;
+      text-overflow: initial;
+    }
+    .ReactTable .-pagination .-center {
+      flex: auto;
+    }
+  }
