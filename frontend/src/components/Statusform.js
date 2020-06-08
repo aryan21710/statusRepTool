@@ -6,13 +6,8 @@ import moment from "moment";
 import ReactTable from "react-table";
 import "../styles/react-table.css";
 
-/**
- * StatusForm Component:- Form which includes Inputs to Enter your Status report
- * @param {Object} state
- * @param {String} state.createdAt Time at which Status Report is Created.
- * @param {Boolean} state.calFocussed Calendar is Focussed or not when clicked
- * @param {String} state.category Category to which the status report belongs to.
- */
+
+
 class StatusForm extends React.Component {
   state = {
     createdAt: moment(),
@@ -25,9 +20,8 @@ class StatusForm extends React.Component {
     onSubmit: false
   };
 
-  /**
-   * Submit Method:- To Submit the Form
-   */
+ 
+  
   Submit = e => {
     e.preventDefault();
   };
@@ -106,15 +100,13 @@ class StatusForm extends React.Component {
                 }}
               >
                 <option value="React">React</option>
-                <option value="Adishwar">Adishwar</option>
-                <option value="Javascript">Javascript</option>
-                <option value="Resume">Resume</option>
-                <option value="Css animation">Css animation</option>
-                <option value="WowExp">WowExp</option>
-                <option value="LogoDesign">LogoDesign</option>
-                <option value="CharDesign">CharDesign</option>
+                <option value="NODE">Adishwar</option>
+                <option value="JAVASCRIPT">JAVASCRIPT</option>
+                <option value="RESUME">RESUME</option>
+                <option value="ONLINE COURSE">WowExp</option>
                 <option value="Comicstrip">Comicstrip</option>
-                <option value="UIDesign">UIDesign</option>
+                <option value="UI-UX">UI/UX</option>
+                <option value="ADOBE-XD">ADOBE-XD</option>
                 <option value="Category" selected>
                   Category
                 </option>
