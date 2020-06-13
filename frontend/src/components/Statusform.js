@@ -101,6 +101,7 @@ class StatusForm extends React.Component {
               >
                 <option value="React">REACT</option>
                 <option value="NODE">NODE</option>
+                <option value="CSS">CSS</option>
                 <option value="JEST">JEST</option>
                 <option value="JAVASCRIPT">JAVASCRIPT</option>
                 <option value="RESUME">RESUME</option>
