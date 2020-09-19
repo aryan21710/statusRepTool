@@ -1,15 +1,17 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const expressValidator = require('express-validator');
+const expressValidator = require("express-validator");
 // Needed to source dotenv file configurations.
 require("dotenv").config();
 
 const app = express();
+app.disable("x-powered-by");
+
 const publicPath = path.join(__dirname);
 const port = process.env.PORT || 5000;
 // IMPORT ALL MIDDLEWARES
@@ -23,7 +25,6 @@ app.use(bodyParser.json());
 // GET /api 304 8.282 ms - - (HTTP REQUEST CAME TO END-POINT /api. )
 app.use(morgan("dev"));
 
-
 // COOKIE-PARSER:- The cookie parser parses cookies and puts the cookie information on req object in the middleware. It will
 // also decrypt signed cookies provided you know the secret. THIS IS BASICALLY NEEDED TO SAVE THE USER CREDENTIALS IN COOKIES.
 app.use(cookieParser());
@@ -32,56 +33,47 @@ app.use(cors());
 
 app.use(expressValidator());
 
-
 // IMPORT ROUTES
 const authRoutes = require("./Routes/auth.js");
 const statusRoutes = require("./Routes/statusReport.js");
-app.use('/userauth',authRoutes)
-app.use('/status',statusRoutes)
+app.use("/userauth", authRoutes);
+app.use("/status", statusRoutes);
 
-
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '..','/frontend/build')))
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
   //
-  app.get('*', (req, res) => {
-    console.log('REQUEST INSIDE * ENDPOINT')
-    res.sendfile(path.join(__dirname , '..','/frontend/build/index.html'))
-  })
+  app.get("*", (req, res) => {
+    console.log("REQUEST INSIDE * ENDPOINT");
+    res.sendfile(path.join(__dirname, "../frontend/build/index.html"));
+  });
 }
 
-console.log('PUBLICPATH:-' + publicPath);
-
-
+console.log("PUBLICPATH:-" + publicPath);
 
 //config DB..
-const db = require('../config/keys.js').mongoURI;
+const db = require("../config/keys.js").mongoURI;
 
 // Connect to the MONGOOSE DB
 mongoose
   .connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
   })
   .then(() => {
-    console.log(`CONNECTED TO DATABASE WITH ENV ${db}` );
+    console.log(`CONNECTED TO DATABASE WITH ENV ${db}`);
   });
 
-
-
-
-
-
-
-// app.get('/', (req, res) => {
-//   res.send('Root route of server');
-// });
-
-
-
-
-app.listen(port, () => {
-	console.log('SERVER LISTENING ON:-' + port);
+app.get("/", (req, res) => {
+  console.log("request coming in * endpoint");
+  res.sendFile(path.join(publicPath, "../frontend/public/index.html")),
+    (err) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+    };
 });
 
-
+app.listen(port, () => {
+  console.log("SERVER LISTENING ON:-" + port);
+});

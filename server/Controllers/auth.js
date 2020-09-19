@@ -96,6 +96,7 @@ const signOut = (req, res) => {
   const requireSignIn = expressJwt({
     secret: process.env.JWT_SECRET_KEY,
     userProperty: "auth",
+    algorithms: ['HS256'],
   });
   
   const isUserAuthenticated = (req, res, next) => {
