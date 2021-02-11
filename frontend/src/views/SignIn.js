@@ -11,6 +11,8 @@ import BallotIcon from '@material-ui/icons/Ballot';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { green, red } from '@material-ui/core/colors';
 import { GoogleLogin } from 'react-google-login';
+import { LinkedIn } from 'react-linkedin-login-oauth2';
+import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png'
 
 const SignIn = props => {
 	const classes = useStyles(props);
@@ -24,38 +26,25 @@ const SignIn = props => {
 					</Typography>
 				</Box>
 
-				<TextField
-					variant="standard"
-					label="Email:-"
-					className={classes.inputFields}
-					type="email"
-					InputLabelProps={{
-						style: { color: '#fff' },
-					}}
-				/>
-				<TextField
-					label="Password:-"
-					className={classes.inputFields}
-					variant="standard"
-					type="password"
-					InputLabelProps={{
-						style: { color: '#fff' },
-					}}
-				/>
-				<Button
-					style={{ margin: '3vh 0vw 4vh 0vw', fontSize: '1vw', padding: '1vh 5vw' }}
-					size="large"
-					variant="contained"
-					color="secondary"
-				>
-					Login
-				</Button>
+				<Typography variant="h4" gutterBottom={true} className={classes.loginUsing}>
+					------------------- Login -------------------
+				</Typography>
 
-				<GoogleLogin
-					clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-					buttonText="Login"
-					cookiePolicy={'single_host_origin'}
-				/>
+				<Box className={classes.socialLogin}>
+					<GoogleLogin
+						className="googleLogin"
+						clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+						buttonText="Login"
+						cookiePolicy={'single_host_origin'}
+					/>
+                    <LinkedIn
+                    className="googleLogin"
+                    clientId="81lx5we2omq9xh"
+                    redirectUri="http://localhost:3000/linkedin"
+                  >
+                    <img src={linkedin} alt="Log in with Linked In" style={{ maxWidth: '180px' }} />
+                  </LinkedIn>
+				</Box>
 			</FormControl>
 		</Box>
 	);

@@ -17,32 +17,33 @@ export const useStyles = makeStyles({
 		flexDirection: 'column',
 		alignItems: 'center',
 		width: '27vw',
-		background: 'rgba(0,0,0,0.8)',
+		background: 'rgba(0,0,0,0.7)',
         borderRadius: '20px',
-        height: "50vh",
-        padding: "3vh 0vw"
+        padding: "5vh 0vw"
 
 	},
-	inputFields: {
-		width: '20vw',
-		margin: '1vh 0vw',
-		color: 'white',
-		fontSize: '20px',
-		borderBottom: '1px solid blue',
-	},
 	title: {
-		color: 'white',
-		marginTop: '5px',
+        color: 'white',
+        marginTop: '5px'
 	},
 	heading: {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-around',
         width: '53%',
-        marginBottom: "5vh"
-
-	},
+    },
+    socialLogin: {
+        display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'space-around',
+        width: '90%',
+    },
 	icon: {
 		color: 'white',
-	},
+    },
+    loginUsing:{
+        margin: "6vh 0vw",
+        color: 'white',
+        fontSize: '0.8vw'
+    }
 });
