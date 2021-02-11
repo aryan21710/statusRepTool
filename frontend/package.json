@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "async": "^3.2.0",
     "axios": "^0.19.2",
     "babel-cli": "^6.26.0",

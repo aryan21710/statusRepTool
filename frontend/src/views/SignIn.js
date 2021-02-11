@@ -12,10 +12,14 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { green, red } from '@material-ui/core/colors';
 import { GoogleLogin } from 'react-google-login';
 import { LinkedIn } from 'react-linkedin-login-oauth2';
-import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png'
+import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
+import { GOOGLE_CLIENT_ID } from '../common/mydotenv';
 
 const SignIn = props => {
 	const classes = useStyles(props);
+	const [googleResp, setGoogleResp] = useState({});
+	const responseGoogle = res => setGoogleResp(res);
+
 	return (
 		<Box width="100vw" height="100vh" className={classes.mainContainer}>
 			<FormControl className={classes.signInForm}>
@@ -33,17 +37,19 @@ const SignIn = props => {
 				<Box className={classes.socialLogin}>
 					<GoogleLogin
 						className="googleLogin"
-						clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+						clientId={GOOGLE_CLIENT_ID}
 						buttonText="Login"
 						cookiePolicy={'single_host_origin'}
+						onSuccess={responseGoogle}
+						onFailure={responseGoogle}
 					/>
-                    <LinkedIn
-                    className="googleLogin"
-                    clientId="81lx5we2omq9xh"
-                    redirectUri="http://localhost:3000/linkedin"
-                  >
-                    <img src={linkedin} alt="Log in with Linked In" style={{ maxWidth: '180px' }} />
-                  </LinkedIn>
+					<LinkedIn
+						className="googleLogin"
+						clientId="81lx5we2omq9xh"
+						redirectUri="http://localhost:3000/linkedin"
+					>
+						<img src={linkedin} alt="Log in with Linked In" style={{ maxWidth: '180px' }} />
+					</LinkedIn>
 				</Box>
 			</FormControl>
 		</Box>
