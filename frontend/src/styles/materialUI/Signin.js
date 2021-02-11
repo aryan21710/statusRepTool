@@ -18,8 +18,10 @@ export const useStyles = makeStyles({
 		alignItems: 'center',
 		width: '27vw',
 		background: 'rgba(0,0,0,0.8)',
-		borderRadius: '20px',
-		padding: '4vh 0vw',
+        borderRadius: '20px',
+        height: "50vh",
+        padding: "3vh 0vw"
+
 	},
 	inputFields: {
 		width: '20vw',
@@ -36,7 +38,9 @@ export const useStyles = makeStyles({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-around',
-		width: '55%',
+        width: '52%',
+        marginBottom: "5vh"
+
 	},
 	icon: {
 		color: 'white',
