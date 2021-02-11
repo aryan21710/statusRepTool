@@ -2,23 +2,23 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Create from "../components/Create";
 import View from "../components/View";
-import SignIn from "../components/SignIn";
+import SignIn from "../views/SignIn";
 import SignUp from "../components/SignUp";
-import backgroundImg from "../images/office.png";
+import { Box } from '@material-ui/core';
+import {useStyles} from '../styles/materialUI/LandingPage';
+const Approutes = (props) => {
+  const classes = useStyles(props);
 
-const Approutes = () => {
   return (
     <BrowserRouter>
-      <div>
-        <img src={backgroundImg} className="commonBackground" alt="background"/>
-
+    <Box width="100%" height="100%" className={classes.parentContainer}>
         <Switch>
           <Route path="/" component={SignIn} exact={true} />
           <Route path="/create" component={Create} />
           <Route path="/signup" component={SignUp} />
           <Route path="/view" component={View} />
         </Switch>
-      </div>
+      </Box>
     </BrowserRouter>
   );
 };
