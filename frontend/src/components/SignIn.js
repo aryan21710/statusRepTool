@@ -7,8 +7,8 @@ import { signUpAction,signInAction } from "../redux/action/LoginAction";
 
 import { signout,saveJwtToLocalStorage } from "../api/userAuth";
 
-
 const SignIn=()=>{
+
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -84,8 +84,14 @@ const SignIn=()=>{
     
   };
 
+
+  /**
+   * This will update the state variable email and password with the user entered email and password.
+   * @param  {object} e Event Object
+   * @returns {object} :- Updates the state variable called values with email & password leaving serverError and signUpSuccess to false;
+   */
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     // console.log('name and value',name,':',value)
     setValues({
       ...values,
@@ -95,6 +101,13 @@ const SignIn=()=>{
     });
   };
 
+
+
+  /**
+   *  This method will be invoked when user uses keyboard keydown button instead of mouse cursor to navigate
+   *  between email and password input boxes.
+   * @param  {object} e Event Object
+   */
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       if (e.target.name === "email") {
