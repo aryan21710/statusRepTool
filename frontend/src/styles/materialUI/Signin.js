@@ -38,7 +38,7 @@ export const useStyles = makeStyles({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-around',
-        width: '52%',
+        width: '53%',
         marginBottom: "5vh"
 
 	},
